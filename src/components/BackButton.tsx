@@ -15,7 +15,7 @@ export default function BackButton() {
       aria-label="Go back"
       onMouseEnter={(event) => {
         event.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
-        event.currentTarget.style.boxShadow = '0px 4px 30px 0px rgba(255, 255, 255, 0.15)';
+        event.currentTarget.style.boxShadow = 'none';
         event.currentTarget.style.border = 'none';
       }}
       onMouseLeave={(event) => {
