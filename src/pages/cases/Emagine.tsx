@@ -536,7 +536,7 @@ export default function Emagine() {
         <div className="flex flex-col gap-[40px]">
           {/* DS subsection — needs relative wrapper for absolute screenshots */}
           <div className="flex flex-col items-end w-full">
-            <div className="flex flex-col w-full relative" style={{ minHeight: '1220px' }}>
+            <div className="flex flex-col w-full relative" style={{ height: '1083.207px' }}>
               {/* Text */}
               <div className="flex flex-col gap-[32px] shrink-0" style={{ paddingTop: '80px', paddingBottom: '40px' }}>
                 <p style={{ fontSize: '72px', lineHeight: '72px', color: '#d2ff50', letterSpacing: '-1.44px', fontWeight: 'normal', margin: 0 }}>
@@ -558,14 +558,17 @@ export default function Emagine() {
                 </div>
               </div>
               {/* Dark panel */}
-              <div className="rounded-[40px] shrink-0 w-full" style={{ height: '675.207px', background: '#494a44' }} />
-              {/* DS composite — positioned to match Figma */}
-              <img
-                src={imgEmagineExecDS1}
-                alt="Design system screens"
-                className="absolute object-cover"
-                style={{ left: '11px', top: '459.79px', width: '1269px', height: '624.41px' }}
-              />
+              <div
+                className="relative rounded-[40px] shrink-0 w-full overflow-hidden"
+                style={{ height: '675.207px', background: '#494a44' }}
+              >
+                <img
+                  src={imgEmagineExecDS1}
+                  alt="Design system screens"
+                  className="absolute"
+                  style={{ left: '11px', bottom: '0', width: '1269px', height: '624.414px' }}
+                />
+              </div>
             </div>
           </div>
 
