@@ -260,7 +260,7 @@ export default function Emagine() {
             src={imgEmagineHeroBg}
             alt="Emagine Portals"
             className="absolute inset-0 w-full object-cover will-change-transform"
-            style={{ height: '120%', top: '-10%' }}
+            style={{ height: '120%', top: '-10%', viewTransitionName: 'case-emagine-hero-image' }}
           />
         </div>
         <div
@@ -472,23 +472,21 @@ export default function Emagine() {
             <button
               onClick={() => setSlide((s) => Math.max(0, s - 1))}
               disabled={slide === 0}
-              className="flex items-center justify-center rounded-[72px] disabled:opacity-40 transition-opacity"
-              style={{ background: '#bdff00', padding: '20px', boxShadow: '0px 4px 30px 0px rgba(191,253,16,0.2)' }}
+              className="flex h-[64px] w-[64px] items-center justify-center rounded-[72px] border-2 border-white bg-transparent text-white transition-[background-color,border-color,opacity] duration-200 hover:border-transparent hover:bg-white/20 disabled:opacity-40 disabled:hover:border-white disabled:hover:bg-transparent"
               aria-label="Previous"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M15 6l-6 6 6 6" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M15 6l-6 6 6 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
             <button
               onClick={() => setSlide((s) => Math.min(1, s + 1))}
               disabled={slide === 1}
-              className="flex items-center justify-center rounded-[72px] disabled:opacity-40 transition-opacity"
-              style={{ background: '#bdff00', padding: '20px', boxShadow: '0px 4px 30px 0px rgba(191,253,16,0.2)' }}
+              className="flex h-[64px] w-[64px] items-center justify-center rounded-[72px] border-2 border-white bg-transparent text-white transition-[background-color,border-color,opacity] duration-200 hover:border-transparent hover:bg-white/20 disabled:opacity-40 disabled:hover:border-white disabled:hover:bg-transparent"
               aria-label="Next"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M9 6l6 6-6 6" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M9 6l6 6-6 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>

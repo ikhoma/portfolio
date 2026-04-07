@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface ProjectCardProps {
   image: string;
@@ -19,6 +19,41 @@ export default function ProjectCard({
   externalUrl,
   className = '',
 }: ProjectCardProps) {
+  const navigate = useNavigate();
+  const sharedImageTransitionName = to === '/cases/emagine' ? 'case-emagine-hero-image' : undefined;
+
+  const handleInternalNavigation = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!to) return;
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.altKey ||
+      event.ctrlKey ||
+      event.shiftKey
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const documentWithTransition = document as Document & {
+      startViewTransition?: (update: () => void | Promise<void>) => unknown;
+    };
+
+    if (
+      typeof documentWithTransition.startViewTransition !== 'function' ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      navigate(to);
+      return;
+    }
+
+    documentWithTransition.startViewTransition(() => {
+      navigate(to);
+    });
+  };
+
   const cardContent = (
     <div
       className={`relative w-full overflow-hidden rounded-[40px] bg-[#2C2A26] group cursor-pointer ${className}`}
@@ -29,6 +64,7 @@ export default function ProjectCard({
         src={image}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        style={{ viewTransitionName: sharedImageTransitionName }}
       />
 
       {/* Overlay gradient */}
@@ -78,7 +114,11 @@ export default function ProjectCard({
   );
 
   if (to) {
-    return <Link to={to} className="block no-underline">{cardContent}</Link>;
+    return (
+      <Link to={to} onClick={handleInternalNavigation} className="block no-underline">
+        {cardContent}
+      </Link>
+    );
   }
   if (externalUrl) {
     return (
