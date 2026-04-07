@@ -475,7 +475,7 @@ export default function Emagine() {
               className="flex h-[64px] w-[64px] items-center justify-center rounded-[72px] border-2 border-white bg-transparent text-white transition-[background-color,border-color,opacity] duration-200 hover:border-transparent hover:bg-white/20 disabled:opacity-40 disabled:hover:border-white disabled:hover:bg-transparent"
               aria-label="Previous"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ transform: 'translateX(-1px)' }}>
                 <path d="M15 6l-6 6 6 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
@@ -485,7 +485,7 @@ export default function Emagine() {
               className="flex h-[64px] w-[64px] items-center justify-center rounded-[72px] border-2 border-white bg-transparent text-white transition-[background-color,border-color,opacity] duration-200 hover:border-transparent hover:bg-white/20 disabled:opacity-40 disabled:hover:border-white disabled:hover:bg-transparent"
               aria-label="Next"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ transform: 'translateX(1px)' }}>
                 <path d="M9 6l6 6-6 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
