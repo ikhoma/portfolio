@@ -1,25 +1,25 @@
 // All image URLs from Figma MCP assets
 
-import emgn001 from './emagine/emgn-001.png';
-import emgn002 from './emagine/emgn-002.png';
-import emgn003 from './emagine/emgn-003.png';
-import emgn004 from './emagine/emgn-004.png';
-import emgnHero from './emagine/emgn-hero.png';
-import emgnDs from './emagine/ds.png';
-import emgnHandoff from './emagine/handoff.png';
-import consultantDashboard from './emagine/consultant-dashboard.png';
-import consultantDashboardMbl from './emagine/consultant-dashboard-mbl.png';
-import jobList from './emagine/job-list.png';
-import jobListMbl from './emagine/job-list-mbl.png';
-import persona001 from './emagine/persn-001.png';
-import persona002 from './emagine/persn-002.png';
-import persona003 from './emagine/persn-003.png';
-import persRnd001 from './emagine/pers-rnd-001.png';
-import persRnd002 from './emagine/pers-rnd-002.png';
-import persRnd003 from './emagine/pers-rnd-003.png';
-import usrTst001 from './emagine/usr-tst-001.png';
-import usersPermissions from './emagine/users&permissions.png';
-import usersPermissionsMbl from './emagine/users&permissions-mbl.png';
+import emgn001 from './emagine/emgn-001.png?url';
+import emgn002 from './emagine/emgn-002.png?url';
+import emgn003 from './emagine/emgn-003.png?url';
+import emgn004 from './emagine/emgn-004.png?url';
+import emgnHero from './emagine/emgn-hero.png?url';
+import emgnDs from './emagine/ds.png?url';
+import emgnHandoff from './emagine/handoff.png?url';
+import consultantDashboard from './emagine/consultant-dashboard.png?url';
+import consultantDashboardMbl from './emagine/consultant-dashboard-mbl.png?url';
+import jobList from './emagine/job-list.png?url';
+import jobListMbl from './emagine/job-list-mbl.png?url';
+import persona001 from './emagine/persn-001.png?url';
+import persona002 from './emagine/persn-002.png?url';
+import persona003 from './emagine/persn-003.png?url';
+import persRnd001 from './emagine/pers-rnd-001.png?url';
+import persRnd002 from './emagine/pers-rnd-002.png?url';
+import persRnd003 from './emagine/pers-rnd-003.png?url';
+import usrTst001 from './emagine/usr-tst-001.png?url';
+import usersPermissions from './emagine/users&permissions.png?url';
+import usersPermissionsMbl from './emagine/users&permissions-mbl.png?url';
 
 // Home page card images
 export const imgChelseaCard = 'https://www.figma.com/api/mcp/asset/945923e6-06ec-4df5-8f47-d43470b9037c';

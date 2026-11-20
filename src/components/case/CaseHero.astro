@@ -1,0 +1,12 @@
+---
+interface Props { title: string; subtitle: string; image: string; tags: string[]; }
+const { title, subtitle, image, tags } = Astro.props;
+---
+<header class="case-hero">
+  <img class="case-hero-image" src={image} alt="" fetchpriority="high" decoding="async" />
+  <div class="case-hero-shade"></div>
+  <div class="case-container case-hero-copy">
+    <h1>{title}<br />{subtitle}</h1>
+    <ul class="case-tags" aria-label="Disciplines">{tags.map(tag => <li>{tag}</li>)}</ul>
+  </div>
+</header>

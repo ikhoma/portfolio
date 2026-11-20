@@ -3,14 +3,17 @@
 ## Tech Stack
 
 - React 19 + TypeScript
-- Vite 8
+- Astro 6 with static file-based routing
 - Tailwind CSS 4 (`@import "tailwindcss"` in index.css, no config file)
-- React Router DOM 7
+- React integration for existing interactive components; native links between Astro pages
 - Global font: **Manrope** (set via `* { font-family: 'Manrope', sans-serif }` in index.css)
 
 ## Project Structure
 
-- `src/pages/` — page components (Home, About, cases/Chelsea, cases/Emagine, cases/Fiba, cases/Jack)
+- `src/pages/` — Astro page routes
+- `src/views/` — existing React views rendered by Astro
+- `src/layouts/CaseLayout.astro` and `src/components/case/` — shared case template
+- `src/styles/case.css` — responsive 12 / 8 / 4-column grid from Ukrselt (1440 / 1200 / 810px breakpoints)
 - `src/components/` — shared components (BackButton, Chip, FooterCTA, LeftRail)
 - `src/assets/images.ts` — all image URL exports (Figma MCP asset URLs)
 

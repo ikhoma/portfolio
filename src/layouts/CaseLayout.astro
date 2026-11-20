@@ -1,0 +1,14 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import BackButton from '../components/BackButton';
+import '../styles/case.css';
+interface Props { title: string; description: string; }
+---
+<BaseLayout {...Astro.props}>
+  <article class="case-page">
+    <BackButton />
+    <slot name="hero" />
+    <main class="case-container"><slot /></main>
+    <slot name="footer" />
+  </article>
+</BaseLayout>

@@ -1,0 +1,134 @@
+---
+import CaseLayout from '../../layouts/CaseLayout.astro';
+import CaseHero from '../../components/case/CaseHero.astro';
+import CaseSection from '../../components/case/CaseSection.astro';
+import CaseMedia from '../../components/case/CaseMedia.astro';
+import { personas, finalDesignStories, researchTableHeaders, researchTableRows } from '../../data/emagine';
+import { imgEmagineHeroBg, imgEmagineAboutDash, imgEmaginePortraitRight, imgEmagineProblemPhoto,
+  imgEmagineImpactPhoto, imgEmagineUserTestingScreen, imgEmagineExecDS1, imgEmagineExecQA,
+  imgEmagineFooterPhone } from '../../assets/images';
+const roles = ['Full ownership of the design system', 'UX owner of B2B part of the app, dashboards for both B2C/B2B', 'Research, Prototyping, Usability Testing', 'Design–engineering alignment', 'Visual QA before releases', 'Knowledge sharing and team enablement'];
+const challenges = ['Low profile completion led to poor job-matching relevance', 'Complex onboarding with low completion rates', 'Weak brand consistency, reducing user trust', 'Weak mobile experience', 'Fragmented UI built on inconsistent Material patterns', 'Slow UI delivery and high design–engineering friction'];
+const execution = ['Rebuilt DS with full tokenization', "Added dark mode, better reflecting emagine's brand identity", '+70–80% design system adoption', '35–50% faster UI delivery', '~40% reduction in UI inconsistencies'];
+const quality = ['Performed deep visual QA pre-release', 'Found and fixed 50+ UI issues (layout, accessibility, token usage)', 'Provided developers with code-ready tokens and usage guidelines', 'Led knowledge-sharing sessions on DS and AI-assisted workflows'];
+const metrics = [{ value: '+22%', label: 'Activation Rate' }, { value: '+30%', label: 'Increase in High-Quality Profiles' }, { value: '+18%', label: 'Improvement in Match Relevance' }, { value: '-35%', label: 'Time to First Match' }];
+---
+<CaseLayout title="Emagine Portals — Ivan Khoma" description="Product design, research, and design system modernisation for Emagine's HR platform.">
+  <CaseHero slot="hero" title="Emagine Portals," subtitle="HR Tech Platform" image={imgEmagineHeroBg}
+    tags={['Design system', 'UI design', 'UX Design', 'Interacton Design', 'Prototyping']} />
+  <CaseSection title="About">
+    <div class="case-grid about-intro">
+      <p class="case-lead">Portals is a B2B/B2C HR web platform that enables consultants and HR agencies to create, manage, and maintain structured professional profiles, which are then used by enterprises to match talent with relevant job opportunities.</p>
+      <div><h3>My Role</h3><ul class="case-list muted">{roles.map(role => <li>{role}</li>)}</ul></div>
+    </div>
+    <div class="case-grid about-story">
+      <div class="about-challenge">
+        <figure class="about-dashboard"><img src={imgEmagineAboutDash} alt="Emagine dashboard" loading="lazy" /></figure>
+        <section aria-labelledby="challenge"><h2 class="case-heading" id="challenge">Challenge</h2>
+          <p>When I joined the project, the platform faced several interconnected problems:</p>
+          <ul class="case-list">{challenges.map(item => <li>{item}</li>)}</ul>
+          <p>These issues affected both user activation and business outcomes.</p>
+        </section>
+      </div>
+      <figure class="about-portrait"><img src={imgEmaginePortraitRight} alt="" loading="lazy" /></figure>
+    </div>
+  </CaseSection>
+  <CaseSection title="Research">
+    <p class="case-copy">Due to the absence of consistent historical product analytics, І used secondary research from HR Tech benchmarks, industry reports, and internal operational insights to define target activation and completion thresholds.</p>
+    <table class="research-table">
+      <thead><tr>{researchTableHeaders.map(header => <th scope="col">{header}</th>)}</tr></thead>
+      <tbody>{researchTableRows.map(row => <tr>{row.map((cell, column) => <td data-label={researchTableHeaders[column]}>
+        {cell.map((line, index) => <p class:list={{ 'research-lead': column === 1 && index === 0 }}>
+          {column === 0 && index > 0 ? '• ' : ''}{line}
+        </p>)}
+      </td>)}</tr>)}</tbody>
+    </table>
+  </CaseSection>
+  <CaseSection title="Problem">
+    <div class="case-grid problem-grid">
+      <p class="case-statement">How might we <span class="muted">reduce early onboarding drop-off and improve сonsultants data completeness by enabling agency users and сonsultants to experience immediate, role-relevant value, so emagine can deliver higher-quality matches and faster hiring outcomes for its clients?</span></p>
+      <figure class="problem-photo"><img src={imgEmagineProblemPhoto} alt="" loading="lazy" /></figure>
+    </div>
+  </CaseSection>
+  <CaseSection title="Process">
+    <case-carousel role="region" aria-roledescription="carousel" aria-label="Design process">
+      <div class="process-slide" data-slide>
+        <div class="process-intro"><h3>Understanding the needs<br />of different user types</h3>
+          <p>Portals have 3 types of users. Consultants, agency admins and agency users, each with different goals and jobs.</p>
+          <p>These personas helped build empathy and prioritize features based on real user goals, ensuring that onboarding, data quality, and matching flows address actual user needs rather than assumptions.</p>
+        </div>
+        <div class="personas-panel"><h3>Who are our users?</h3><div class="personas-grid">
+          {personas.map(persona => <section class="persona" aria-label={persona.name}>
+            <blockquote>{persona.quote}</blockquote>
+            <img src={persona.img} alt={persona.name} loading="lazy" />
+            <h4>{persona.name}</h4><p class="persona-role">{persona.role}</p><p>{persona.desc}</p>
+          </section>)}
+        </div></div>
+      </div>
+      <div class="process-slide" data-slide>
+        <div class="process-intro"><h3>User Testing</h3>
+          <p>To validate onboarding efficiency, I conducted usability testing focused on measuring time-to-completion for the full profile setup.</p>
+          <p>Using task-based scenarios and think-aloud protocol users completed onboarding without guidance. The sessions helped identify friction points, reduce perceived effort, and optimize the flow by simplifying inputs and improving system feedback.</p>
+        </div>
+        <figure class="testing-screen"><img src={imgEmagineUserTestingScreen} alt="User testing session" loading="lazy" /></figure>
+      </div>
+      <div class="carousel-controls" hidden>
+        <button type="button" data-previous aria-label="Previous" disabled><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m15 6-6 6 6 6" stroke="currentColor" stroke-width="2" /></svg></button>
+        <button type="button" data-next aria-label="Next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" /></svg></button>
+        <span data-status aria-live="polite" class="muted">1 / 2</span>
+      </div>
+    </case-carousel>
+  </CaseSection>
+  <CaseSection title="Final Design">
+    <div class="design-stories">{finalDesignStories.map(story => <section class="design-story" aria-label={story.role}>
+      <div class="story-heading"><img src={story.avatar} alt="" loading="lazy" width="108" height="108" />
+        <p><span class="muted">{story.preRole}</span>{story.role}<span class="muted">{story.want}</span></p>
+      </div>
+      <div class="screens-panel">
+        <img class="desktop-screen" src={story.desktopImg} alt={`${story.role} desktop`} loading="lazy" />
+        <img class="mobile-screen" src={story.mobileImg} alt={`${story.role} mobile`} loading="lazy" />
+      </div>
+    </section>)}</div>
+  </CaseSection>
+  <CaseSection title="Execution">
+    <div><h3>Design System &amp; Front-end Modernisation</h3><ul class="case-list muted">{execution.map(item => <li>{item}</li>)}</ul></div>
+    <CaseMedia src={imgEmagineExecDS1} alt="Design system screens" />
+    <div><h3>Quality &amp; Collaboration</h3><ul class="case-list muted">{quality.map(item => <li>{item}</li>)}</ul></div>
+    <CaseMedia src={imgEmagineExecQA} alt="Quality & collaboration" />
+  </CaseSection>
+  <CaseSection title="Impact">
+    <div class="case-grid impact-grid">
+      <figure class="impact-photo"><img src={imgEmagineImpactPhoto} alt="Impact" loading="lazy" /></figure>
+      <dl class="impact-metrics">{metrics.map(metric => <div><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}</dl>
+    </div>
+  </CaseSection>
+  <footer slot="footer" class="case-next">
+    <div class="case-container"><p>Watch next</p><h2><a href="/cases/chelsea">Chelsea FC App</a></h2>
+      <a class="case-next-button" href="/cases/chelsea">Watch</a><p class="case-next-tag">#productdesign</p>
+    </div>
+    <img src={imgEmagineFooterPhone} alt="" loading="lazy" />
+  </footer>
+</CaseLayout>
+<script>
+  class CaseCarousel extends HTMLElement {
+    connectedCallback() {
+      const slides = Array.from(this.querySelectorAll<HTMLElement>('[data-slide]'));
+      const previous = this.querySelector<HTMLButtonElement>('[data-previous]')!;
+      const next = this.querySelector<HTMLButtonElement>('[data-next]')!;
+      const status = this.querySelector<HTMLElement>('[data-status]')!;
+      let active = 0;
+      const show = (index: number) => {
+        active = index;
+        slides.forEach((slide, position) => { slide.hidden = position !== active; });
+        previous.disabled = active === 0;
+        next.disabled = active === slides.length - 1;
+        status.textContent = `${active + 1} / ${slides.length}`;
+      };
+      previous.addEventListener('click', () => show(Math.max(0, active - 1)));
+      next.addEventListener('click', () => show(Math.min(slides.length - 1, active + 1)));
+      this.querySelector<HTMLElement>('.carousel-controls')!.hidden = false;
+      show(0);
+    }
+  }
+  customElements.define('case-carousel', CaseCarousel);
+</script>

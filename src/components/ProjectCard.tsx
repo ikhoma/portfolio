@@ -1,4 +1,3 @@
-import { Link, useNavigate } from 'react-router-dom';
 
 interface ProjectCardProps {
   image: string;
@@ -19,40 +18,7 @@ export default function ProjectCard({
   externalUrl,
   className = '',
 }: ProjectCardProps) {
-  const navigate = useNavigate();
   const sharedImageTransitionName = to === '/cases/emagine' ? 'case-emagine-hero-image' : undefined;
-
-  const handleInternalNavigation = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!to) return;
-    if (
-      event.defaultPrevented ||
-      event.button !== 0 ||
-      event.metaKey ||
-      event.altKey ||
-      event.ctrlKey ||
-      event.shiftKey
-    ) {
-      return;
-    }
-
-    event.preventDefault();
-
-    const documentWithTransition = document as Document & {
-      startViewTransition?: (update: () => void | Promise<void>) => unknown;
-    };
-
-    if (
-      typeof documentWithTransition.startViewTransition !== 'function' ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ) {
-      navigate(to);
-      return;
-    }
-
-    documentWithTransition.startViewTransition(() => {
-      navigate(to);
-    });
-  };
 
   const cardContent = (
     <div
@@ -115,9 +81,9 @@ export default function ProjectCard({
 
   if (to) {
     return (
-      <Link to={to} onClick={handleInternalNavigation} className="block no-underline">
+      <a href={to} className="block no-underline">
         {cardContent}
-      </Link>
+      </a>
     );
   }
   if (externalUrl) {

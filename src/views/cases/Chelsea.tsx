@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import BackButton from '../../components/BackButton';
 import {
   imgChelseaHeroBg,
@@ -29,7 +28,6 @@ const slides = [imgChelseaSlide1, imgChelseaSlide2, imgChelseaSlide3];
 
 export default function Chelsea() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const navigate = useNavigate();
 
   const prevSlide = () => setCurrentSlide((s) => Math.max(0, s - 1));
   const nextSlide = () => setCurrentSlide((s) => Math.min(slides.length - 1, s + 1));
@@ -709,7 +707,7 @@ export default function Chelsea() {
             {/* Watch button — centered via px-[540px] */}
             <div style={{ paddingLeft: '540px' }}>
               <button
-                onClick={() => navigate('/cases/jack')}
+                onClick={() => { window.location.href = '/cases/jack'; }}
                 className="font-bold text-[#181818]"
                 style={{
                   background: '#bdff00',

@@ -1,0 +1,4 @@
+---
+interface Props { src: string; alt: string; }
+---
+<figure class="case-media"><img src={Astro.props.src} alt={Astro.props.alt} loading="lazy" decoding="async" /></figure>

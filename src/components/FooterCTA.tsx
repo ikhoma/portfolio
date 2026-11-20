@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 
 interface FooterCTAProps {
   nextLabel: string;
@@ -21,8 +20,8 @@ export default function FooterCTA({ nextLabel, nextTo, phoneImage }: FooterCTAPr
         </p>
         <h2 className="text-[40px] font-bold text-white mb-8 leading-tight">{nextLabel}</h2>
         <div className="flex items-center gap-4">
-          <Link
-            to={nextTo}
+          <a
+            href={nextTo}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-[72px] text-[15px] font-bold text-black no-underline transition-opacity hover:opacity-90"
             style={{ background: '#D2FF50' }}
           >
@@ -36,7 +35,7 @@ export default function FooterCTA({ nextLabel, nextTo, phoneImage }: FooterCTAPr
                 strokeLinejoin="round"
               />
             </svg>
-          </Link>
+          </a>
           <span className="text-[13px] font-medium text-[#969593]">#productdesign</span>
         </div>
       </div>
