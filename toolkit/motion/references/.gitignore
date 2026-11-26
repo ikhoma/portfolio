@@ -1,0 +1,6 @@
+# Keep contact sheets / frames, never commit raw videos
+*.mp4
+*.mov
+*.webm
+*.m4v
+inbox/

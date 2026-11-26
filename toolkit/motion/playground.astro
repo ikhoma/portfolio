@@ -1,0 +1,144 @@
+---
+// Dev-only playground: /toolkit/motion (injected by the toolkit integration in astro.config.mjs).
+// Every preset from presets/reveal.css + reveal.ts, live, with the markup to copy.
+import './tokens.css';
+import './presets/reveal.css';
+
+const clients = ['Chelsea FC', 'FIBA', 'USGA', 'IndyCar', 'FINA', 'Emagine', 'SourceBible'];
+const demos = [
+  { id: 'lines', title: 'Поява тексту по рядках', from: 'Lama Lama, ERA', code: '<h2 data-reveal="lines">…</h2>' },
+  { id: 'fade-up', title: 'Fade-up зі stagger', from: 'ERA, Shopify Editions', code: '<p data-reveal="fade-up">…</p>  ← сусіди отримують затримку автоматично' },
+  { id: 'clip', title: 'Відкриття маскою', from: 'Son Daven, Lando Norris', code: '<figure data-reveal="clip" data-clip="up|left|center"><img …></figure>' },
+  { id: 'blinds', title: 'Жалюзі', from: 'Son Daven', code: '<figure data-reveal="blinds" data-stripes="10"><img …></figure>' },
+  { id: 'parallax', title: 'Шари з різною швидкістю', from: 'Son Daven, ERA, Lando Norris', code: '<img data-parallax="0.2">  ← від’ємне значення рухає у протилежний бік' },
+  { id: 'draw', title: 'Малювання ліній', from: 'ERA, Shopify Editions', code: '<hr data-draw>  ·  <svg data-draw>…</svg>' },
+  { id: 'scramble', title: 'Scramble', from: 'Lama Lama, Locomotive', code: '<span data-scramble data-duration="800">−32%</span>' },
+  { id: 'marquee', title: 'Безкінечна стрічка', from: 'Son Daven, ERA', code: '<div data-marquee data-speed="60">…</div>' },
+  { id: 'spring', title: 'Пружний hover', from: 'Shopify Editions, Obys', code: '<a class="tk-spring">…</a>' },
+];
+const photo = (seed: number, w = 1200, h = 800) =>
+  `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${seed} 30% 30%)"/><stop offset="1" stop-color="hsl(${seed + 40} 40% 14%)"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><circle cx="${w * 0.7}" cy="${h * 0.35}" r="${h * 0.22}" fill="hsl(${seed + 20} 60% 70% / .5)"/></svg>`)}`;
+---
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toolkit · Motion presets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style is:global>
+    :root { --bg: #101010; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: #ececec; font: 16px/1.5 Manrope, system-ui, sans-serif; }
+    .wrap { max-width: 1600px; margin: 0 auto; padding: 0 80px; }
+    header { padding: 120px 0 80px; }
+    header h1 { font-size: clamp(56px, 8vw, 128px); line-height: .9; letter-spacing: -.04em; margin: 0 0 24px; font-weight: 500; }
+    header p { color: #8f8e88; max-width: 60ch; margin: 0; }
+    nav.toc { position: sticky; top: 0; z-index: 5; background: rgba(16,16,16,.85); backdrop-filter: blur(8px); border-block: 1px solid #262624; }
+    nav.toc .wrap { display: flex; gap: 20px; flex-wrap: wrap; padding-block: 12px; font-size: 13px; }
+    nav.toc a { color: #8f8e88; text-decoration: none; } nav.toc a:hover { color: #d2ff50; }
+    section.demo { padding: 120px 0; border-bottom: 1px solid #262624; }
+    .head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; margin-bottom: 48px; align-items: end; }
+    .head .n { grid-column: span 2; color: #8f8e88; font-size: 13px; }
+    .head h2 { grid-column: span 6; margin: 0; font-size: 40px; letter-spacing: -.02em; font-weight: 500; }
+    .head .meta { grid-column: span 4; font-size: 13px; color: #8f8e88; }
+    code { display: block; margin-top: 8px; font: 12px ui-monospace, Menlo, monospace; color: #d2ff50; white-space: pre-wrap; }
+    .g { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; }
+    .big { font-size: clamp(40px, 5vw, 80px); line-height: 1; letter-spacing: -.03em; margin: 0; font-weight: 500; }
+    .lead { font-size: 28px; line-height: 1.3; letter-spacing: -.01em; margin: 0; }
+    figure { margin: 0; border-radius: 24px; overflow: hidden; }
+    figure img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .card { background: #1a1a19; border-radius: 20px; padding: 28px; min-height: 180px; }
+    .card b { display: block; font-size: 48px; letter-spacing: -.03em; color: #d2ff50; }
+    .tall { height: 70vh; position: relative; overflow: hidden; border-radius: 24px; background: #151514; }
+    .tall .layer { position: absolute; border-radius: 16px; overflow: hidden; }
+    .marquee-item { font-size: 72px; letter-spacing: -.03em; padding-right: 64px; white-space: nowrap; color: #e8e8e8; }
+    .marquee-item::after { content: '✳'; color: #d2ff50; margin-left: 64px; }
+    .btn { display: inline-flex; padding: 18px 32px; border-radius: 99px; background: #d2ff50; color: #111; font-weight: 700; text-decoration: none; margin-right: 12px; }
+    .chip { display: inline-flex; padding: 10px 18px; border-radius: 99px; border: 1px solid #3a3a37; color: #ececec; text-decoration: none; }
+    @media (max-width: 810px) { .wrap { padding: 0 16px; } .head > * { grid-column: 1 / -1 !important; } .g > * { grid-column: 1 / -1 !important; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <h1 data-reveal="lines">Motion presets, batch one</h1>
+    <p data-reveal="fade-up">Пресети з motion-зрізу 2026, які ти обрав. Скроль униз: кожен блок показує пресет наживо, а праворуч — розмітку для підключення. Перевір і з «Reduce motion» у системних налаштуваннях: усе має стояти на місці.</p>
+  </header>
+  <nav class="toc"><div class="wrap">{demos.map((d) => <a href={`#${d.id}`}>{d.title}</a>)}</div></nav>
+
+  {demos.map((d, i) => (
+    <section class="demo" id={d.id}>
+      <div class="wrap">
+        <div class="head">
+          <span class="n">{String(i + 1).padStart(2, '0')} · {d.id}</span>
+          <h2>{d.title}</h2>
+          <div class="meta">Референс: {d.from}<code>{d.code}</code></div>
+        </div>
+
+        {d.id === 'lines' && (
+          <div class="g">
+            <h3 class="big" style="grid-column: 1 / span 9" data-reveal="lines">Redesigning how millions of fans follow the club on match day</h3>
+            <p class="lead" style="grid-column: 3 / span 8; margin-top: 40px" data-reveal="lines">Chelsea FC’s official app needed to feel as fast as the game. We rebuilt live match centre, news and video around a single, glanceable feed.</p>
+          </div>
+        )}
+        {d.id === 'fade-up' && (
+          <div class="g">
+            {['−32% churn', '+18% DAU', '4.8 ★ App Store', '2M+ fans'].map((t) => (
+              <div class="card" style="grid-column: span 3" data-reveal="fade-up"><b>{t.split(' ')[0]}</b>{t.split(' ').slice(1).join(' ')}</div>
+            ))}
+          </div>
+        )}
+        {d.id === 'clip' && (
+          <div class="g">
+            <figure style="grid-column: span 6; aspect-ratio: 4/3" data-reveal="clip"><img src={photo(200)} alt="" /></figure>
+            <figure style="grid-column: span 3; aspect-ratio: 3/4" data-reveal="clip" data-clip="left"><img src={photo(20)} alt="" /></figure>
+            <figure style="grid-column: span 3; aspect-ratio: 3/4" data-reveal="clip" data-clip="center"><img src={photo(320)} alt="" /></figure>
+          </div>
+        )}
+        {d.id === 'blinds' && (
+          <figure style="aspect-ratio: 21/9" data-reveal="blinds" data-stripes="12"><img src={photo(30, 2100, 900)} alt="" /></figure>
+        )}
+        {d.id === 'parallax' && (
+          <div class="tall">
+            <div class="layer" style="left: 6%; top: 18%; width: 26%; height: 52%" data-parallax="0.35"><img src={photo(210, 600, 900)} alt="" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="layer" style="left: 38%; top: 8%; width: 24%; height: 40%" data-parallax="-0.2"><img src={photo(10, 600, 900)} alt="" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="layer" style="left: 66%; top: 30%; width: 28%; height: 56%" data-parallax="0.15"><img src={photo(300, 600, 900)} alt="" style="width:100%;height:100%;object-fit:cover" /></div>
+          </div>
+        )}
+        {d.id === 'draw' && (
+          <div class="g">
+            <div style="grid-column: span 12"><hr data-draw style="border:0;border-top:1px solid #3a3a37;margin:0 0 48px" /></div>
+            <svg data-draw viewBox="0 0 600 160" style="grid-column: span 8; width: 100%; height: auto" fill="none" stroke="#d2ff50" stroke-width="1.5">
+              <rect x="10" y="40" width="120" height="80" rx="12" />
+              <path d="M130 80 H230" />
+              <rect x="230" y="40" width="120" height="80" rx="12" />
+              <path d="M350 80 H450" />
+              <circle cx="510" cy="80" r="50" />
+            </svg>
+            <p style="grid-column: span 4; color:#8f8e88">Роздільники секцій і схеми user flow в кейсах. SVG-фігури малюються по черзі.</p>
+          </div>
+        )}
+        {d.id === 'scramble' && (
+          <div class="g">
+            {['MATCH DAY', '−32%', 'iOS · ANDROID', '2019—2024'].map((t) => (
+              <div class="card" style="grid-column: span 3"><b data-scramble data-duration="900" style="font-family: ui-monospace, Menlo, monospace; font-size: 32px">{t}</b></div>
+            ))}
+          </div>
+        )}
+        {d.id === 'marquee' && (
+          <div data-marquee data-speed="70">{clients.map((c) => <span class="marquee-item">{c}</span>)}</div>
+        )}
+        {d.id === 'spring' && (
+          <div><a href="#spring" class="btn tk-spring">Let’s talk</a><a href="#spring" class="chip tk-spring">Product design</a></div>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <script>
+    import { initMotion } from './presets/reveal';
+    document.fonts.ready.then(() => initMotion());
+  </script>
+</body>
+</html>

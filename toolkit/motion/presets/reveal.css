@@ -1,0 +1,127 @@
+/* Motion presets — batch 1 (from the 2026 slice, decided 2026-11-26).
+   Markup API (all opt-in via data attributes); behaviour in reveal.ts.
+   Needs ../tokens.css. Everything is static for prefers-reduced-motion.
+
+   data-reveal="lines"   heading / paragraph: lines rise from a mask, staggered   (Lama Lama, ERA)
+   data-reveal="fade-up" any block: opacity + translateY                          (ERA, Renaissance)
+   data-reveal="clip"    image / block opens with clip-path; data-clip="up|left|center"   (Son Daven, Lando)
+   data-reveal="blinds"  image opens through vertical stripes                     (Son Daven intro)
+   data-draw             <hr>/.tk-rule grows from the left; SVG shapes draw their stroke   (ERA, Renaissance)
+   data-scramble         short label / number scrambles before settling          (Lama Lama, Locomotive)
+   data-parallax="0.15"  element drifts at a different speed while it crosses the viewport (Son Daven, ERA, Lando)
+   data-marquee          endless horizontal strip, data-speed px/s (default 60)   (Son Daven, ERA)
+   .tk-spring            hover / press with a small overshoot                     (Shopify Editions, Obys)
+
+   Tuning per element: --tk-dur, --tk-stagger, --tk-delay, --tk-ease (style="--tk-stagger: 60ms"). */
+
+:root {
+  --tk-reveal-dur: 1000ms;          /* slice: 0.8–1.2s for block reveals */
+  --tk-reveal-stagger: 80ms;        /* slice: 18–100ms */
+  --tk-reveal-ease: var(--ease-out);
+  --tk-reveal-move: 24px;
+  /* Spring, CSS linear() (overshoot ~6%, settles by 70%) — Obys-style, no library */
+  --ease-spring: linear(0, 0.18 4%, 0.57 12%, 0.88 20%, 1.04 28%, 1.08 34%, 1.06 42%, 1.01 52%, 0.99 62%, 1);
+  /* Back-out overshoot — Shopify Editions */
+  --ease-back-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* ---- lines ---- */
+  [data-reveal='lines'] .tk-line { display: block; overflow: hidden; padding-block: 0.06em; margin-block: -0.06em; }
+  [data-reveal='lines'] .tk-line__in {
+    display: block;
+    transform: translateY(105%);
+    transition: transform var(--tk-dur, var(--tk-reveal-dur)) var(--tk-ease, var(--tk-reveal-ease));
+    transition-delay: calc(var(--tk-delay, 0ms) + var(--i, 0) * var(--tk-stagger, var(--tk-reveal-stagger)));
+  }
+  [data-reveal='lines'].is-in .tk-line__in { transform: none; }
+
+  /* ---- fade-up ---- */
+  [data-reveal='fade-up'] {
+    opacity: 0;
+    transform: translateY(var(--tk-reveal-move));
+    transition: opacity var(--tk-dur, var(--tk-reveal-dur)) var(--tk-ease, var(--tk-reveal-ease)),
+      transform var(--tk-dur, var(--tk-reveal-dur)) var(--tk-ease, var(--tk-reveal-ease));
+    transition-delay: calc(var(--tk-delay, 0ms) + var(--i, 0) * var(--tk-stagger, var(--tk-reveal-stagger)));
+  }
+  [data-reveal='fade-up'].is-in { opacity: 1; transform: none; }
+
+  /* ---- clip ---- */
+  [data-reveal='clip'] {
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path var(--tk-dur, 1200ms) var(--tk-ease, var(--ease-in-out));
+    transition-delay: calc(var(--tk-delay, 0ms) + var(--i, 0) * var(--tk-stagger, 100ms));
+  }
+  [data-reveal='clip'][data-clip='left'] { clip-path: inset(0 100% 0 0); }
+  [data-reveal='clip'][data-clip='center'] { clip-path: inset(50% 50% 50% 50%); }
+  [data-reveal='clip'].is-in { clip-path: inset(0 0 0 0); }
+  [data-reveal='clip'] > img, [data-reveal='clip'] > video {
+    transform: scale(1.12);
+    transition: transform calc(var(--tk-dur, 1200ms) * 1.4) var(--ease-out);
+  }
+  [data-reveal='clip'].is-in > img, [data-reveal='clip'].is-in > video { transform: none; }
+
+  /* ---- blinds ---- */
+  [data-reveal='blinds'] { position: relative; }
+  [data-reveal='blinds'] .tk-blinds { position: absolute; inset: 0; display: flex; pointer-events: none; z-index: 1; }
+  [data-reveal='blinds'] .tk-blinds span {
+    flex: 1;
+    background: var(--tk-blinds-color, var(--bg, #101010));
+    transform-origin: top;
+    transition: transform var(--tk-dur, 800ms) var(--tk-ease, var(--ease-in-out));
+    transition-delay: calc(var(--tk-delay, 0ms) + var(--i, 0) * var(--tk-stagger, 50ms));
+  }
+  [data-reveal='blinds'].is-in .tk-blinds span { transform: scaleY(0); }
+
+  /* ---- draw ---- */
+  hr[data-draw], .tk-rule[data-draw] {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--tk-dur, 800ms) var(--tk-ease, var(--ease-in-out));
+    transition-delay: var(--tk-delay, 0ms);
+  }
+  hr[data-draw].is-in, .tk-rule[data-draw].is-in { transform: none; }
+  svg[data-draw] :is(path, line, polyline, polygon, circle, rect, ellipse) {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset var(--tk-dur, 1200ms) var(--tk-ease, var(--ease-in-out));
+    transition-delay: calc(var(--tk-delay, 0ms) + var(--i, 0) * var(--tk-stagger, 60ms));
+  }
+  svg[data-draw].is-in :is(path, line, polyline, polygon, circle, rect, ellipse) { stroke-dashoffset: 0; }
+
+  /* ---- parallax (scroll-driven where supported; reveal.ts covers the rest) ---- */
+  @supports (animation-timeline: view()) {
+    [data-parallax] {
+      animation: tk-parallax linear both;
+      animation-timeline: view();
+      animation-range: cover;
+    }
+  }
+
+  /* ---- marquee ---- */
+  [data-marquee] { overflow: hidden; }
+  [data-marquee] .tk-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: tk-marquee var(--tk-marquee-dur, 30s) linear infinite;
+  }
+  [data-marquee][data-direction='right'] .tk-marquee__track { animation-direction: reverse; }
+  [data-marquee]:hover .tk-marquee__track { animation-play-state: paused; }
+
+  /* ---- spring hover ---- */
+  .tk-spring { transition: transform 500ms var(--ease-spring); will-change: transform; }
+  .tk-spring:hover { transform: translateY(-2px) scale(1.03); }
+  .tk-spring:active { transform: scale(0.97); transition-duration: 160ms; }
+}
+
+/* Scramble: keep width steady — tabular figures; use a mono or fixed width for long labels. */
+[data-scramble] { font-variant-numeric: tabular-nums; }
+
+/* Marquee track also exists with reduced motion — it just doesn't move. */
+[data-marquee] .tk-marquee__track > * { flex: none; }
+
+@keyframes tk-parallax {
+  from { transform: translateY(calc(var(--tk-parallax, 0.15) * 50%)); }
+  to { transform: translateY(calc(var(--tk-parallax, 0.15) * -50%)); }
+}
+@keyframes tk-marquee { to { transform: translateX(-50%); } }
