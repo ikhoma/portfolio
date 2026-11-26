@@ -88,13 +88,17 @@ function prepSvg(svg: SVGSVGElement) {
 
 let parallaxEls: HTMLElement[] = [];
 let parallaxBound = false;
+const pxShift = new WeakMap<HTMLElement, number>();
 function parallaxFallback() {
   const vh = window.innerHeight;
   for (const el of parallaxEls) {
     const r = el.getBoundingClientRect();
-    const p = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2); // -1..1 across the viewport
+    const top = r.top - (pxShift.get(el) ?? 0); // untransformed position, so the shift never feeds back
+    const p = (top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2); // -1..1 across the viewport
     const k = Number(el.dataset.parallax || 0.15);
-    el.style.transform = `translateY(${(p * k * 60).toFixed(2)}vh)`;
+    const shift = Math.max(-1, Math.min(1, p)) * k * 0.6 * vh;
+    pxShift.set(el, shift);
+    el.style.transform = `translateY(${shift.toFixed(1)}px)`;
   }
 }
 
@@ -151,8 +155,21 @@ export function initMotion(root: ParentNode = document) {
 
   const px = [...root.querySelectorAll<HTMLElement>('[data-parallax]')];
   px.forEach((el) => el.style.setProperty('--tk-parallax', el.dataset.parallax || '0.15'));
-  if (!reduced() && !CSS.supports('animation-timeline: view()') && px.length) {
-    parallaxEls = [...new Set([...parallaxEls, ...px])];
+  // view() binds to the nearest scroll container. An ancestor with overflow hidden/auto/scroll
+  // is one even if it never scrolls, so the CSS timeline would freeze: drive those from JS.
+  // (Use overflow: clip on wrappers to keep the CSS path.)
+  const sda = CSS.supports('animation-timeline: view()');
+  const inScroller = (el: HTMLElement) => {
+    for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) {
+      const { overflowX, overflowY } = getComputedStyle(a);
+      if (/(hidden|auto|scroll)/.test(overflowX + overflowY)) return true;
+    }
+    return false;
+  };
+  const jsPx = px.filter((el) => !sda || inScroller(el));
+  jsPx.forEach((el) => el.setAttribute('data-parallax-js', ''));
+  if (!reduced() && jsPx.length) {
+    parallaxEls = [...new Set([...parallaxEls, ...jsPx])];
     if (!parallaxBound) {
       parallaxBound = true;
       let raf = 0;

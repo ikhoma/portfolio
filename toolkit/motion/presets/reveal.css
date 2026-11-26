@@ -91,7 +91,7 @@
 
   /* ---- parallax (scroll-driven where supported; reveal.ts covers the rest) ---- */
   @supports (animation-timeline: view()) {
-    [data-parallax] {
+    [data-parallax]:not([data-parallax-js]) {
       animation: tk-parallax linear both;
       animation-timeline: view();
       animation-range: cover;
