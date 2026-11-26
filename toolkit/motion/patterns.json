@@ -1,287 +1,287 @@
 [
- {
-  "id": "line-reveal",
-  "name": "Поява тексту по рядках",
-  "category": "text",
-  "transfer": "css+js",
-  "examples": [
-   "lama-lama",
-   "era-residence",
-   "renaissance"
-  ],
-  "params": "0.8–1.2s · stagger 0.06–0.1s · quart/expo-out",
-  "use_for": "Заголовки й ліди кейсів, перший екран Home.",
-  "avoid_for": "Довгий основний текст — дратує при повторному читанні.",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "preset",
-  "preset": "presets/reveal.css · data-reveal=\"lines\" / \"fade-up\""
- },
- {
-  "id": "scramble",
-  "name": "Scramble-лейбли й лічильники",
-  "category": "text",
-  "transfer": "css+js",
-  "examples": [
-   "lama-lama",
-   "locomotive"
-  ],
-  "params": "0.6–1s · по символах",
-  "use_for": "Чипи-теги кейсів, метрики (−32% … +18%), номер проєкту.",
-  "avoid_for": "Основні заголовки, довгий текст.",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "preset",
-  "preset": "presets/reveal.css · data-scramble"
- },
- {
-  "id": "mixed-type",
-  "name": "Пара гарнітур в одному заголовку",
-  "category": "text",
-  "transfer": "css",
-  "examples": [
-   "unseen",
-   "lando-norris",
-   "renaissance",
-   "era-residence"
-  ],
-  "params": "дисплей ls −0.02…−0.06em · лейбли UPPERCASE ls +0.05…+0.08em",
-  "use_for": "Заголовки розділів кейсів («Impact», «Process»), About.",
-  "avoid_for": "Більше двох гарнітур на екрані.",
-  "decision": null,
-  "decided": null,
-  "status": "undecided",
-  "preset": null
- },
- {
-  "id": "giant-type",
-  "name": "Гігантська типографіка як композиція",
-  "category": "text",
-  "transfer": "css",
-  "examples": [
-   "exo-ape",
-   "harry-atkins",
-   "oryzo",
-   "santioni"
-  ],
-  "params": "150–250px · lh 0.8–0.9",
-  "use_for": "Hero кейсу: назва продукту (CHELSEA, FIBA) як графіка; ініціали ІХ на Home.",
-  "avoid_for": "Мобільний без окремої адаптації розміру.",
-  "decision": null,
-  "decided": null,
-  "status": "undecided",
-  "preset": null
- },
- {
-  "id": "clip-reveal",
-  "name": "Відкриття зображень маскою",
-  "category": "scroll-reveal",
-  "transfer": "css+js",
-  "examples": [
-   "son-daven",
-   "lando-norris"
-  ],
-  "params": "0.75–1.2s · stagger 0.1s · quart-out / (0.65, 0.05, 0, 1)",
-  "use_for": "Скріншоти й мокапи в кейсах, hero-зображення.",
-  "avoid_for": "Дрібні іконки, елементи UI.",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "preset",
-  "preset": "presets/reveal.css · data-reveal=\"clip\" / \"blinds\""
- },
- {
-  "id": "parallax-layers",
-  "name": "Шари з різною швидкістю",
-  "category": "scroll-linked",
-  "transfer": "css",
-  "examples": [
-   "son-daven",
-   "era-residence",
-   "lando-norris",
-   "gregor-collienne"
-  ],
-  "params": "scrub, yPercent 10–20%",
-  "use_for": "Колаж екранів у кейсах (як Lando), hero кейсу (вже маємо паралакс).",
-  "avoid_for": "Текст для читання — тільки фон і зображення.",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "preset",
-  "preset": "presets/reveal.css · data-parallax"
- },
- {
-  "id": "pinned-object",
-  "name": "Закріплений об'єкт, навколо якого змінюється історія",
-  "category": "scroll-linked",
-  "transfer": "css+js",
-  "examples": [
-   "oryzo",
-   "exo-ape"
-  ],
-  "params": "sticky + scrub; WebGL не обов'язковий — підходить відео/секвенція зображень",
-  "use_for": "Кейси мобільних застосунків: закріплений iPhone з екранами Chelsea/FIBA, поки збоку змінюються фічі.",
-  "avoid_for": "Коли історія не має одного центрального об'єкта.",
-  "decision": null,
-  "decided": null,
-  "status": "undecided",
-  "preset": null
- },
- {
-  "id": "section-stack",
-  "name": "Розділи як обкладинки / стек панелей",
-  "category": "page-transition",
-  "transfer": "css",
-  "examples": [
-   "floema",
-   "renaissance"
-  ],
-  "params": "sticky stacking · expo-out 300–500ms на UI",
-  "use_for": "Розділи довгого кейсу: Challenge → Research → Design → Impact.",
-  "avoid_for": "Короткі сторінки (About).",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "planned (batch 2)",
-  "preset": null
- },
- {
-  "id": "index-nav",
-  "name": "Зміст-індекс, що показує, де ти",
-  "category": "menu",
-  "transfer": "css+js",
-  "examples": [
-   "renaissance",
-   "obys",
-   "era-residence"
-  ],
-  "params": "nav-item-in 1s · stagger 40ms",
-  "use_for": "Ліва колонка кейсу (вже маємо LeftRail — розвинути в індекс розділів).",
-  "avoid_for": "Мобільний — ховати в компактний прогрес.",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "planned (batch 2)",
-  "preset": null
- },
- {
-  "id": "project-browser",
-  "name": "Нестандартний список робіт",
-  "category": "carousel",
-  "transfer": "css+js",
-  "examples": [
-   "obys",
-   "lama-lama",
-   "harry-atkins",
-   "lando-norris"
-  ],
-  "params": "expo-out 1000ms · CSS spring linear() 1600ms",
-  "use_for": "Home: список кейсів (Chelsea, FIBA, Emagine, Jack…).",
-  "avoid_for": "Коли робіт мало (до 4) — лінза й віяло виглядають порожньо.",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "planned (batch 2)",
-  "preset": null
- },
- {
-  "id": "entry",
-  "name": "Вхід з характером",
-  "category": "loader",
-  "transfer": "css+js",
-  "examples": [
-   "unseen",
-   "why-zero",
-   "santioni",
-   "floema",
-   "lama-lama"
-  ],
-  "params": "≤ 2–3s · раз за сесію",
-  "use_for": "Короткий вхід на Home лише при першому візиті (наприклад, ініціали + сітка).",
-  "avoid_for": "Кожен перехід між сторінками; кейси.",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "planned (batch 2)",
-  "preset": null
- },
- {
-  "id": "line-draw",
-  "name": "Малювання ліній",
-  "category": "scroll-reveal",
-  "transfer": "css",
-  "examples": [
-   "era-residence",
-   "renaissance"
-  ],
-  "params": "0.8s InOut (UI) · 3–6s (декор)",
-  "use_for": "Роздільники секцій, схеми user flow у кейсах.",
-  "avoid_for": "—",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "preset",
-  "preset": "presets/reveal.css · data-draw"
- },
- {
-  "id": "cursor",
-  "name": "Курсор як інструмент",
-  "category": "cursor",
-  "transfer": "webgl",
-  "examples": [
-   "lando-norris",
-   "unseen",
-   "gregor-collienne"
-  ],
-  "params": "WebGL mask або CSS",
-  "use_for": "Обережно: hover-лінза на hero-фото кейсу (до/після редизайну).",
-  "avoid_for": "Тач-пристрої — потрібна альтернатива.",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "planned (batch 2)",
-  "preset": null
- },
- {
-  "id": "spring-hover",
-  "name": "Пружний hover",
-  "category": "hover",
-  "transfer": "css",
-  "examples": [
-   "renaissance",
-   "obys"
-  ],
-  "params": "400–500ms · cubic-bezier(0.34, 1.56, 0.64, 1) або CSS linear() spring",
-  "use_for": "Кнопки CTA, картки проєктів, чипи.",
-  "avoid_for": "Великі блоки й переходи сторінок.",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "preset",
-  "preset": "presets/reveal.css · .tk-spring"
- },
- {
-  "id": "marquee",
-  "name": "Безкінечна стрічка",
-  "category": "carousel",
-  "transfer": "css",
-  "examples": [
-   "son-daven",
-   "era-residence"
-  ],
-  "params": "5–32s linear · repeat",
-  "use_for": "Клієнти (Chelsea, FIBA, USGA, IndyCar, FINA) на Home/About.",
-  "avoid_for": "Важлива інформація, яку треба прочитати.",
-  "decision": "take",
-  "decided": "2026-11-26",
-  "status": "preset",
-  "preset": "presets/reveal.css · data-marquee"
- },
- {
-  "id": "floating-nav",
-  "name": "Плаваюча навігація-«пігулка»",
-  "category": "menu",
-  "transfer": "css",
-  "examples": [
-   "lama-lama"
-  ],
-  "params": "—",
-  "use_for": "Глобальна навігація портфоліо замість фіксованої лівої колонки на мобільному.",
-  "avoid_for": "—",
-  "decision": "maybe",
-  "decided": "2026-11-26",
-  "status": "parked",
-  "preset": null
- }
+  {
+    "id": "line-reveal",
+    "name": "Поява тексту по рядках",
+    "category": "text",
+    "transfer": "css+js",
+    "examples": [
+      "lama-lama",
+      "era-residence",
+      "renaissance"
+    ],
+    "params": "0.8–1.2s · stagger 0.06–0.1s · quart/expo-out",
+    "use_for": "Заголовки й ліди кейсів, перший екран Home.",
+    "avoid_for": "Довгий основний текст — дратує при повторному читанні.",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/reveal.css · data-reveal=\"lines\" / \"fade-up\""
+  },
+  {
+    "id": "scramble",
+    "name": "Scramble-лейбли й лічильники",
+    "category": "text",
+    "transfer": "css+js",
+    "examples": [
+      "lama-lama",
+      "locomotive"
+    ],
+    "params": "0.6–1s · по символах",
+    "use_for": "Чипи-теги кейсів, метрики (−32% … +18%), номер проєкту.",
+    "avoid_for": "Основні заголовки, довгий текст.",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/reveal.css · data-scramble"
+  },
+  {
+    "id": "mixed-type",
+    "name": "Пара гарнітур в одному заголовку",
+    "category": "text",
+    "transfer": "css",
+    "examples": [
+      "unseen",
+      "lando-norris",
+      "renaissance",
+      "era-residence"
+    ],
+    "params": "дисплей ls −0.02…−0.06em · лейбли UPPERCASE ls +0.05…+0.08em",
+    "use_for": "Заголовки розділів кейсів («Impact», «Process»), About.",
+    "avoid_for": "Більше двох гарнітур на екрані.",
+    "decision": null,
+    "decided": null,
+    "status": "undecided",
+    "preset": null
+  },
+  {
+    "id": "giant-type",
+    "name": "Гігантська типографіка як композиція",
+    "category": "text",
+    "transfer": "css",
+    "examples": [
+      "exo-ape",
+      "harry-atkins",
+      "oryzo",
+      "santioni"
+    ],
+    "params": "150–250px · lh 0.8–0.9",
+    "use_for": "Hero кейсу: назва продукту (CHELSEA, FIBA) як графіка; ініціали ІХ на Home.",
+    "avoid_for": "Мобільний без окремої адаптації розміру.",
+    "decision": null,
+    "decided": null,
+    "status": "undecided",
+    "preset": null
+  },
+  {
+    "id": "clip-reveal",
+    "name": "Відкриття зображень маскою",
+    "category": "scroll-reveal",
+    "transfer": "css+js",
+    "examples": [
+      "son-daven",
+      "lando-norris"
+    ],
+    "params": "0.75–1.2s · stagger 0.1s · quart-out / (0.65, 0.05, 0, 1)",
+    "use_for": "Скріншоти й мокапи в кейсах, hero-зображення.",
+    "avoid_for": "Дрібні іконки, елементи UI.",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/reveal.css · data-reveal=\"clip\" / \"blinds\""
+  },
+  {
+    "id": "parallax-layers",
+    "name": "Шари з різною швидкістю",
+    "category": "scroll-linked",
+    "transfer": "css",
+    "examples": [
+      "son-daven",
+      "era-residence",
+      "lando-norris",
+      "gregor-collienne"
+    ],
+    "params": "scrub, yPercent 10–20%",
+    "use_for": "Колаж екранів у кейсах (як Lando), hero кейсу (вже маємо паралакс).",
+    "avoid_for": "Текст для читання — тільки фон і зображення.",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/reveal.css · data-parallax"
+  },
+  {
+    "id": "pinned-object",
+    "name": "Закріплений об'єкт, навколо якого змінюється історія",
+    "category": "scroll-linked",
+    "transfer": "css+js",
+    "examples": [
+      "oryzo",
+      "exo-ape"
+    ],
+    "params": "sticky + scrub; WebGL не обов'язковий — підходить відео/секвенція зображень",
+    "use_for": "Кейси мобільних застосунків: закріплений iPhone з екранами Chelsea/FIBA, поки збоку змінюються фічі.",
+    "avoid_for": "Коли історія не має одного центрального об'єкта.",
+    "decision": null,
+    "decided": null,
+    "status": "undecided",
+    "preset": null
+  },
+  {
+    "id": "section-stack",
+    "name": "Розділи як обкладинки / стек панелей",
+    "category": "page-transition",
+    "transfer": "css",
+    "examples": [
+      "floema",
+      "renaissance"
+    ],
+    "params": "sticky stacking · expo-out 300–500ms на UI",
+    "use_for": "Розділи довгого кейсу: Challenge → Research → Design → Impact.",
+    "avoid_for": "Короткі сторінки (About).",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/compose.css · .tk-stack > .tk-stack__panel"
+  },
+  {
+    "id": "index-nav",
+    "name": "Зміст-індекс, що показує, де ти",
+    "category": "menu",
+    "transfer": "css+js",
+    "examples": [
+      "renaissance",
+      "obys",
+      "era-residence"
+    ],
+    "params": "nav-item-in 1s · stagger 40ms",
+    "use_for": "Ліва колонка кейсу (вже маємо LeftRail — розвинути в індекс розділів).",
+    "avoid_for": "Мобільний — ховати в компактний прогрес.",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/compose.ts · [data-index] + [data-index-title]"
+  },
+  {
+    "id": "project-browser",
+    "name": "Нестандартний список робіт",
+    "category": "carousel",
+    "transfer": "css+js",
+    "examples": [
+      "obys",
+      "lama-lama",
+      "harry-atkins",
+      "lando-norris"
+    ],
+    "params": "expo-out 1000ms · CSS spring linear() 1600ms",
+    "use_for": "Home: список кейсів (Chelsea, FIBA, Emagine, Jack…).",
+    "avoid_for": "Коли робіт мало (до 4) — лінза й віяло виглядають порожньо.",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/compose.css · .tk-projects[data-variant=\"rows\" | \"lens\"]"
+  },
+  {
+    "id": "entry",
+    "name": "Вхід з характером",
+    "category": "loader",
+    "transfer": "css+js",
+    "examples": [
+      "unseen",
+      "why-zero",
+      "santioni",
+      "floema",
+      "lama-lama"
+    ],
+    "params": "≤ 2–3s · раз за сесію",
+    "use_for": "Короткий вхід на Home лише при першому візиті (наприклад, ініціали + сітка).",
+    "avoid_for": "Кожен перехід між сторінками; кейси.",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/compose.ts · data-entry (once per session)"
+  },
+  {
+    "id": "line-draw",
+    "name": "Малювання ліній",
+    "category": "scroll-reveal",
+    "transfer": "css",
+    "examples": [
+      "era-residence",
+      "renaissance"
+    ],
+    "params": "0.8s InOut (UI) · 3–6s (декор)",
+    "use_for": "Роздільники секцій, схеми user flow у кейсах.",
+    "avoid_for": "—",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/reveal.css · data-draw"
+  },
+  {
+    "id": "cursor",
+    "name": "Курсор як інструмент",
+    "category": "cursor",
+    "transfer": "webgl",
+    "examples": [
+      "lando-norris",
+      "unseen",
+      "gregor-collienne"
+    ],
+    "params": "WebGL mask або CSS",
+    "use_for": "Обережно: hover-лінза на hero-фото кейсу (до/після редизайну).",
+    "avoid_for": "Тач-пристрої — потрібна альтернатива.",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/compose.ts · data-cursor, [data-lens]"
+  },
+  {
+    "id": "spring-hover",
+    "name": "Пружний hover",
+    "category": "hover",
+    "transfer": "css",
+    "examples": [
+      "renaissance",
+      "obys"
+    ],
+    "params": "400–500ms · cubic-bezier(0.34, 1.56, 0.64, 1) або CSS linear() spring",
+    "use_for": "Кнопки CTA, картки проєктів, чипи.",
+    "avoid_for": "Великі блоки й переходи сторінок.",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/reveal.css · .tk-spring"
+  },
+  {
+    "id": "marquee",
+    "name": "Безкінечна стрічка",
+    "category": "carousel",
+    "transfer": "css",
+    "examples": [
+      "son-daven",
+      "era-residence"
+    ],
+    "params": "5–32s linear · repeat",
+    "use_for": "Клієнти (Chelsea, FIBA, USGA, IndyCar, FINA) на Home/About.",
+    "avoid_for": "Важлива інформація, яку треба прочитати.",
+    "decision": "take",
+    "decided": "2026-11-26",
+    "status": "preset",
+    "preset": "presets/reveal.css · data-marquee"
+  },
+  {
+    "id": "floating-nav",
+    "name": "Плаваюча навігація-«пігулка»",
+    "category": "menu",
+    "transfer": "css",
+    "examples": [
+      "lama-lama"
+    ],
+    "params": "—",
+    "use_for": "Глобальна навігація портфоліо замість фіксованої лівої колонки на мобільному.",
+    "avoid_for": "—",
+    "decision": "maybe",
+    "decided": "2026-11-26",
+    "status": "parked",
+    "preset": null
+  }
 ]

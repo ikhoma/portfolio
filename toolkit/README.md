@@ -33,7 +33,7 @@ Two audiences, two formats:
 | Module | Status | What |
 |---|---|---|
 | `grid/` | ✅ v1 | Grid rules (`GRID.md`) + dev overlay (Ctrl+G / floating button) |
-| `motion/` | 🟡 batch 1 | Tokens, page transitions, 9 reveal/scroll presets + playground `/toolkit/motion`, slices & decisions (`MOTION.md`) |
+| `motion/` | 🟡 batch 2 | Tokens, page transitions, 9 reveal/scroll + 6 composition presets (stack, index, project browser rows/lens, entry, cursor/lens) + playground `/toolkit/motion`, slices & decisions (`MOTION.md`) |
 | `type/` | ⏳ next | Type scale on the baseline, baseline overlay |
 | `spacing/` | ⏳ | 4/8 spacing scale, inspector for off-scale values |
 | `quality/` | ⏳ | Contrast / a11y checks, Playwright screenshot tests |
@@ -50,7 +50,7 @@ toolkit/
   motion/
     MOTION.md          ← taxonomy, catalog format, reference workflow, presets
     tokens.css         ← durations + easings
-    presets/           ← page-transitions.css, reveal.css + reveal.ts
+    presets/           ← page-transitions.css, reveal.css + reveal.ts, compose.css + compose.ts
     playground.astro   ← dev-only /toolkit/motion
     patterns.json      ← patterns + Ivan's decisions + status
     slices/2026/       ← visual review page of the 2026 slice

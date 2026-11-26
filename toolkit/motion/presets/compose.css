@@ -1,0 +1,138 @@
+/* Motion presets — batch 2: page composition (decided 2026-11-26).
+   Behaviour in compose.ts (initCompose). Needs ../tokens.css and reveal.css (--ease-spring).
+
+   .tk-stack > .tk-stack__panel   full-screen panels; each next one slides over the previous,
+                                  which sinks back and dims                      (Floema, Shopify Editions)
+   [data-index]                   sticky table of contents built from [data-index-title] sections,
+                                  numbered, with the active one lit and a progress rule   (Shopify Editions, Obys, ERA)
+   .tk-projects[data-variant=rows]  work list: rows; hovering a row slides its preview strip in  (Lama Lama)
+   .tk-projects[data-variant=lens]  work list: vertical column, the centred project in focus
+                                  between brackets, name/meta beside it            (Obys)
+   [data-entry]                   one-per-session intro overlay that lifts away     (Unseen, Floema, Lama Lama)
+   data-cursor="Label"            custom follower cursor that grows and shows a label on hover
+   [data-lens]                    image with a second image revealed in a circle under the cursor (Lando Norris, no WebGL)
+*/
+
+/* ---------- section stack ---------- */
+.tk-stack { position: relative; }
+.tk-stack__panel {
+  position: sticky;
+  top: 0;
+  min-height: 100svh;
+  overflow: hidden;
+  transform-origin: 50% 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .tk-stack__panel:not(:last-child) {
+      animation: tk-stack-sink linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+@keyframes tk-stack-sink { to { transform: scale(0.92); filter: brightness(0.45); border-radius: 24px; } }
+
+/* ---------- index nav ---------- */
+[data-index] { position: sticky; top: var(--tk-index-top, 96px); display: flex; flex-direction: column; gap: 10px; font-size: 13px; }
+[data-index] a { display: grid; grid-template-columns: 2.5em 1fr; gap: 8px; color: var(--tk-index-muted, #7f7f7a); text-decoration: none; transition: color var(--dur-fast) var(--ease-out), transform var(--dur-base) var(--ease-out); }
+[data-index] a:hover { color: var(--tk-index-text, #ececec); }
+[data-index] a.is-active { color: var(--tk-index-text, #ececec); transform: translateX(4px); }
+[data-index] a span:first-child { font-variant-numeric: tabular-nums; opacity: .7; }
+[data-index] .tk-index__bar { height: 1px; background: var(--tk-index-muted, #3a3a37); margin-top: 6px; position: relative; overflow: hidden; }
+[data-index] .tk-index__bar i { position: absolute; inset: 0; background: var(--tk-index-accent, #d2ff50); transform-origin: left; transform: scaleX(var(--tk-progress, 0)); }
+@media (prefers-reduced-motion: no-preference) {
+  [data-index] a { opacity: 0; translate: 0 6px; transition-property: color, transform, opacity, translate; transition-duration: var(--dur-fast), var(--dur-base), 1000ms, 1000ms; transition-delay: 0s, 0s, calc(var(--i, 0) * 40ms), calc(var(--i, 0) * 40ms); }
+  [data-index].is-in a { opacity: 1; translate: none; }
+}
+
+/* ---------- project browser: rows ---------- */
+.tk-projects[data-variant='rows'] { border-top: 1px solid var(--tk-line, #2b2b28); }
+.tk-projects[data-variant='rows'] .tk-project {
+  display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 5fr); gap: 20px; align-items: center;
+  padding: 24px 0; border-bottom: 1px solid var(--tk-line, #2b2b28); color: inherit; text-decoration: none;
+}
+.tk-projects[data-variant='rows'] .tk-project__name { font-size: clamp(24px, 2.4vw, 40px); letter-spacing: -.02em; transition: transform var(--dur-base) var(--ease-out); }
+.tk-projects[data-variant='rows'] .tk-project__meta { font-size: 13px; color: var(--tk-index-muted, #8f8e88); }
+.tk-projects[data-variant='rows'] .tk-project__strip { display: flex; gap: 8px; justify-content: flex-end; overflow: hidden; height: 120px; }
+.tk-projects[data-variant='rows'] .tk-project__strip img { height: 100%; width: auto; border-radius: 8px; object-fit: cover; }
+@media (prefers-reduced-motion: no-preference) {
+  .tk-projects[data-variant='rows'] .tk-project__strip img { transform: translateX(40%); opacity: 0; transition: transform 700ms var(--ease-out), opacity 400ms var(--ease-out); transition-delay: calc(var(--i, 0) * 50ms); }
+  .tk-projects[data-variant='rows'] .tk-project:is(:hover, :focus-visible) .tk-project__strip img { transform: none; opacity: 1; }
+  .tk-projects[data-variant='rows'] .tk-project:is(:hover, :focus-visible) .tk-project__name { transform: translateX(8px); }
+}
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .tk-projects[data-variant='rows'] .tk-project__strip img { transform: none; opacity: 1; }
+}
+
+/* ---------- project browser: lens ---------- */
+.tk-projects[data-variant='lens'] {
+  --lens-h: 320px;
+  --lens-box: min(80svh, 760px);
+  display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 120px; align-items: center;
+  height: var(--lens-box); position: relative;
+}
+.tk-projects[data-variant='lens'] .tk-lens__col {
+  height: 100%; overflow-y: auto; scroll-snap-type: y mandatory; scrollbar-width: none;
+  padding-block: calc((var(--lens-box) - var(--lens-h)) / 2); width: min(32vw, 360px);
+  mask-image: linear-gradient(transparent, #000 25%, #000 75%, transparent);
+}
+.tk-projects[data-variant='lens'] .tk-lens__col::-webkit-scrollbar { display: none; }
+.tk-projects[data-variant='lens'] .tk-project {
+  display: block; scroll-snap-align: center; height: var(--lens-h); padding: 24px 0; transform: scale(.55); opacity: .45;
+  transition: transform 1000ms var(--ease-out), opacity 600ms var(--ease-out);
+}
+.tk-projects[data-variant='lens'] .tk-project.is-active { transform: none; opacity: 1; }
+.tk-projects[data-variant='lens'] .tk-project img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
+.tk-projects[data-variant='lens']::before, .tk-projects[data-variant='lens']::after {
+  content: ''; position: absolute; top: 50%; translate: 0 -50%; width: 56px; height: calc(var(--lens-h) - 48px); pointer-events: none;
+  border: 14px solid var(--tk-index-text, #ececec); left: calc(50% - min(16vw, 180px) - 72px);
+  border-right: 0; border-radius: 60px 0 0 60px;
+}
+.tk-projects[data-variant='lens']::after { left: auto; right: calc(50% - min(16vw, 180px) - 72px); border-right: 14px solid var(--tk-index-text, #ececec); border-left: 0; border-radius: 0 60px 60px 0; }
+.tk-projects[data-variant='lens'] .tk-lens__name { justify-self: end; text-align: right; font-size: 13px; }
+.tk-projects[data-variant='lens'] .tk-lens__meta { font-size: 13px; color: var(--tk-index-muted, #8f8e88); }
+.tk-projects[data-variant='lens'] .tk-lens__name b { display: block; font-size: 24px; font-weight: 500; letter-spacing: -.01em; color: var(--tk-index-text, #ececec); }
+@media (prefers-reduced-motion: reduce) { .tk-projects[data-variant='lens'] .tk-project { transition: none; } }
+@media (max-width: 810px) {
+  .tk-projects[data-variant='lens'] { --lens-box: 70svh; grid-template-columns: 1fr; height: auto; }
+  .tk-projects[data-variant='lens']::before, .tk-projects[data-variant='lens']::after { display: none; }
+  .tk-projects[data-variant='lens'] .tk-lens__col { width: 100%; height: var(--lens-box); }
+  .tk-projects[data-variant='lens'] .tk-lens__name { justify-self: start; text-align: left; }
+}
+
+/* ---------- entry ---------- */
+.tk-entry {
+  position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; background: var(--tk-entry-bg, #101010); color: var(--tk-entry-text, #ececec);
+  transition: transform 900ms var(--ease-in-out), visibility 0s 900ms;
+}
+.tk-entry.is-out { transform: translateY(-100%); visibility: hidden; }
+.tk-entry__mark { font-size: clamp(72px, 14vw, 220px); line-height: .9; letter-spacing: -.05em; font-weight: 500; overflow: hidden; }
+.tk-entry__mark span { display: inline-block; transform: translateY(105%); transition: transform 900ms var(--ease-out); transition-delay: calc(var(--i, 0) * 70ms); }
+.tk-entry.is-in .tk-entry__mark span { transform: none; }
+.tk-entry__lines { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(var(--tk-entry-cols, 12), 1fr); gap: var(--grid-gutter, 20px); padding-inline: var(--grid-pad, 80px); pointer-events: none; }
+.tk-entry__lines i { border-inline: 1px solid rgba(255,255,255,.07); transform: scaleY(0); transform-origin: top; transition: transform 1100ms var(--ease-out); transition-delay: calc(var(--i, 0) * 35ms); }
+.tk-entry.is-in .tk-entry__lines i { transform: none; }
+.tk-entry__skip { position: absolute; bottom: 32px; font-size: 12px; letter-spacing: .04em; opacity: .5; background: none; border: 0; color: inherit; cursor: pointer; }
+
+/* ---------- cursor ---------- */
+.tk-cursor {
+  position: fixed; left: 0; top: 0; z-index: 9998; pointer-events: none; width: 12px; height: 12px; margin: -6px 0 0 -6px;
+  border-radius: 99px; background: var(--tk-cursor, #d2ff50); color: #111; display: grid; place-items: center;
+  font-size: 12px; font-weight: 600; white-space: nowrap; mix-blend-mode: normal;
+  transition: width 500ms var(--ease-spring), height 500ms var(--ease-spring), margin 500ms var(--ease-spring), opacity 200ms;
+}
+.tk-cursor span { opacity: 0; transition: opacity 200ms; }
+.tk-cursor.is-label { width: 88px; height: 88px; margin: -44px 0 0 -44px; }
+.tk-cursor.is-label span { opacity: 1; }
+.tk-cursor.is-hidden { opacity: 0; }
+@media (hover: none), (pointer: coarse) { .tk-cursor { display: none; } }
+
+[data-lens] { position: relative; overflow: hidden; }
+[data-lens] > .tk-lens__reveal {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  clip-path: circle(0 at var(--x, 50%) var(--y, 50%));
+  transition: clip-path 600ms var(--ease-spring);
+}
+[data-lens]:hover > .tk-lens__reveal { clip-path: circle(var(--tk-lens-r, 140px) at var(--x, 50%) var(--y, 50%)); transition: clip-path 600ms var(--ease-spring), 0s; }
+@media (hover: none) { [data-lens] > .tk-lens__reveal { display: none; } }

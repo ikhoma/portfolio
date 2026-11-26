@@ -116,11 +116,34 @@ Reveals run once; `data-once="false"` keeps observing. All of it is static under
 
 **Live playground:** `npm run dev` → `/toolkit/motion` (dev only).
 
+### Composition — `presets/compose.css` + `presets/compose.ts` (batch 2)
+Page-level patterns. Import the CSS, then call `initCompose()` next to `initMotion()`:
+
+```astro
+<script>
+  import { initMotion } from '../../toolkit/motion/presets/reveal';
+  import { initCompose } from '../../toolkit/motion/presets/compose';
+  document.fonts.ready.then(() => { initMotion(); initCompose(); });
+</script>
+```
+
+| Markup | What | Reference |
+|---|---|---|
+| `.tk-stack > .tk-stack__panel` | full-screen sticky panels; the next slides over, the previous sinks (scale .92, dims). CSS only, scroll-driven | Floema, Shopify Editions |
+| `<nav data-index="#scope" data-numbers="roman">` + `data-index-title` on sections | builds a numbered table of contents, lights the current section, progress rule (`--tk-progress`) | Shopify Editions, Obys, ERA |
+| `.tk-projects[data-variant="rows"]` > `a.tk-project` (`__name`, `__meta`, `__strip` of imgs) | work list; hover / focus slides the preview strip in | Lama Lama |
+| `.tk-projects[data-variant="lens"]` > `.tk-lens__name`, `.tk-lens__col` > `.tk-project[data-name][data-meta][data-tags]`, `.tk-lens__meta` | vertical scroll-snap column, centred project in focus between brackets, name/meta beside it; arrows work | Obys |
+| `<body data-entry="Ivan Khoma" data-entry-duration="1800">` | intro overlay once per session: wordmark rises, grid lines draw, curtain lifts. Esc / Skip closes; never under reduced motion. `showEntry({ force: true })` replays | Unseen, Floema, Lama Lama |
+| `data-cursor="View"` | follower cursor grows into a labelled disc over the element | Lando Norris, Obys |
+| `<figure data-lens><img><img class="tk-lens__reveal"></figure>` | second image revealed in a circle under the pointer (`--tk-lens-r`) — before/after, wireframe/final | Lando Norris (without WebGL) |
+
+Cursor and lens are off on touch screens. Colours come from `--tk-index-text`,
+`--tk-index-muted`, `--tk-index-accent`, `--tk-cursor`, `--tk-entry-bg`.
+
 ### Decisions & backlog — `patterns.json`
 Every pattern from the slices with Ivan's decision (`take` / `maybe` / undecided),
-status (`preset`, `planned (batch 2)`, `parked`) and where it is implemented.
-Batch 2 (needs page-specific design): section stack, index navigation, project
-browser, entry, cursor.
+status (`preset`, `parked`, `undecided`) and where it is implemented.
+Still open: mixed-type, giant-type, pinned-object (undecided), floating-nav (parked).
 
 ## 6. Already in the portfolio (seeded in the catalog)
 

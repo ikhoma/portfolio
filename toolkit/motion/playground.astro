@@ -3,6 +3,7 @@
 // Every preset from presets/reveal.css + reveal.ts, live, with the markup to copy.
 import './tokens.css';
 import './presets/reveal.css';
+import './presets/compose.css';
 
 const clients = ['Chelsea FC', 'FIBA', 'USGA', 'IndyCar', 'FINA', 'Emagine', 'SourceBible'];
 const demos = [
@@ -15,6 +16,22 @@ const demos = [
   { id: 'scramble', title: 'Scramble', from: 'Lama Lama, Locomotive', code: '<span data-scramble data-duration="800">−32%</span>' },
   { id: 'marquee', title: 'Безкінечна стрічка', from: 'Son Daven, ERA', code: '<div data-marquee data-speed="60">…</div>' },
   { id: 'spring', title: 'Пружний hover', from: 'Shopify Editions, Obys', code: '<a class="tk-spring">…</a>' },
+];
+const demos2 = [
+  { id: 'section-stack', title: 'Секції стосом', from: 'Floema, Shopify Editions', code: '<div class="tk-stack">\n  <section class="tk-stack__panel">…</section> ×N\n</div>' },
+  { id: 'index-nav', title: 'Індекс-навігація', from: 'Shopify Editions, Obys, ERA', code: '<nav data-index="#scope" data-numbers="roman"></nav>\n<section data-index-title="Problem">…' },
+  { id: 'projects-rows', title: 'Список робіт: рядки', from: 'Lama Lama', code: '<div class="tk-projects" data-variant="rows">\n  <a class="tk-project"> name · meta · .tk-project__strip </a>' },
+  { id: 'projects-lens', title: 'Список робіт: лінза', from: 'Obys', code: '<div class="tk-projects" data-variant="lens">\n  .tk-lens__name · .tk-lens__col > .tk-project[data-name][data-meta] · .tk-lens__meta' },
+  { id: 'entry', title: 'Вхід (раз за сесію)', from: 'Unseen, Floema, Lama Lama', code: '<body data-entry="Ivan Khoma" data-entry-duration="1800">' },
+  { id: 'cursor', title: 'Курсор і лінза', from: 'Lando Norris, Obys', code: '<a data-cursor="View">…</a>\n<figure data-lens><img><img class="tk-lens__reveal"></figure>' },
+];
+const projects = [
+  { name: 'Chelsea FC', meta: 'Mobile app · 2019—2024', tags: 'Sport · Media', hue: 220 },
+  { name: 'FIBA', meta: 'Live scores · 2022', tags: 'Sport · Data', hue: 20 },
+  { name: 'USGA', meta: 'Championship app · 2021', tags: 'Sport · Events', hue: 140 },
+  { name: 'IndyCar', meta: 'Race hub · 2023', tags: 'Motorsport', hue: 0 },
+  { name: 'FINA', meta: 'Aquatics app · 2020', tags: 'Sport · Media', hue: 190 },
+  { name: 'SourceBible', meta: 'iOS app · 2026', tags: 'Founder · Study', hue: 40 },
 ];
 const photo = (seed: number, w = 1200, h = 800) =>
   `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${seed} 30% 30%)"/><stop offset="1" stop-color="hsl(${seed + 40} 40% 14%)"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><circle cx="${w * 0.7}" cy="${h * 0.35}" r="${h * 0.22}" fill="hsl(${seed + 20} 60% 70% / .5)"/></svg>`)}`;
@@ -57,12 +74,15 @@ const photo = (seed: number, w = 1200, h = 800) =>
     .marquee-item::after { content: '✳'; color: #d2ff50; margin-left: 64px; }
     .btn { display: inline-flex; padding: 18px 32px; border-radius: 99px; background: #d2ff50; color: #111; font-weight: 700; text-decoration: none; margin-right: 12px; }
     .chip { display: inline-flex; padding: 10px 18px; border-radius: 99px; border: 1px solid #3a3a37; color: #ececec; text-decoration: none; }
+    .stack-panel { display: flex; flex-direction: column; justify-content: space-between; padding: 48px; border-radius: 24px; }
+    .stack-panel .n { color: #8f8e88; font-size: 13px; }
+    .index-sec { min-height: 60vh; border-top: 1px solid #262624; padding-top: 24px; }
     @media (max-width: 810px) { .wrap { padding: 0 16px; } .head > * { grid-column: 1 / -1 !important; } .g > * { grid-column: 1 / -1 !important; } }
   </style>
 </head>
 <body>
   <header class="wrap">
-    <h1 data-reveal="lines">Motion presets, batch one</h1>
+    <h1 data-reveal="lines">Motion presets</h1>
     <p data-reveal="fade-up">Пресети з motion-зрізу 2026, які ти обрав. Скроль униз: кожен блок показує пресет наживо, а праворуч — розмітку для підключення. Перевір і з «Reduce motion» у системних налаштуваннях: усе має стояти на місці.</p>
   </header>
   <nav class="toc"><div class="wrap">{demos.map((d) => <a href={`#${d.id}`}>{d.title}</a>)}</div></nav>
@@ -136,9 +156,92 @@ const photo = (seed: number, w = 1200, h = 800) =>
     </section>
   ))}
 
+  <header class="wrap" style="padding-top: 160px">
+    <h1 data-reveal="lines">Batch two: composition</h1>
+    <p data-reveal="fade-up">Пресети, що будують сторінку цілком: стос секцій, індекс, браузер робіт, вхід і курсор. Підключення: compose.css + <code style="display:inline">initCompose()</code> з presets/compose.ts.</p>
+  </header>
+  <nav class="toc"><div class="wrap">{demos2.map((d) => <a href={`#${d.id}`}>{d.title}</a>)}</div></nav>
+
+  {demos2.map((d, i) => (
+    <section class="demo" id={d.id}>
+      <div class="wrap">
+        <div class="head">
+          <span class="n">{String(demos.length + i + 1).padStart(2, '0')} · {d.id}</span>
+          <h2>{d.title}</h2>
+          <div class="meta">Референс: {d.from}<code>{d.code}</code></div>
+        </div>
+
+        {d.id === 'section-stack' && (
+          <div class="tk-stack">
+            {['Problem', 'Process', 'Solution', 'Impact'].map((t, j) => (
+              <section class="tk-stack__panel stack-panel" style={`background: hsl(${80 + j * 60} 12% ${14 + j * 3}%)`}>
+                <span class="n">{String(j + 1).padStart(2, '0')}</span>
+                <h3 class="big">{t}</h3>
+              </section>
+            ))}
+          </div>
+        )}
+        {d.id === 'index-nav' && (
+          <div class="g" id="index-scope">
+            <nav style="grid-column: span 3" data-index="#index-scope" data-numbers="roman" aria-label="Зміст кейсу"></nav>
+            <div style="grid-column: 5 / span 8">
+              {['Overview', 'Problem', 'Research', 'Design system', 'Match centre', 'Impact'].map((t) => (
+                <section data-index-title={t} class="index-sec">
+                  <h3 class="lead" style="margin-bottom: 16px">{t}</h3>
+                  <p style="color:#8f8e88; max-width: 56ch">Блок кейсу. Індекс зліва підсвічує поточну секцію, лінія внизу показує прогрес читання; клік скролить до секції.</p>
+                </section>
+              ))}
+            </div>
+          </div>
+        )}
+        {d.id === 'projects-rows' && (
+          <div class="tk-projects" data-variant="rows">
+            {projects.map((p) => (
+              <a class="tk-project" href="#projects-rows" data-cursor="Open">
+                <span class="tk-project__name">{p.name}</span>
+                <span class="tk-project__meta">{p.meta}</span>
+                <span class="tk-project__strip">{[0, 1, 2].map((k) => <img src={photo(p.hue + k * 25, 300, 400)} alt="" />)}</span>
+              </a>
+            ))}
+          </div>
+        )}
+        {d.id === 'projects-lens' && (
+          <div class="tk-projects" data-variant="lens">
+            <div class="tk-lens__name" aria-live="polite"></div>
+            <div class="tk-lens__col" tabindex="0" aria-label="Проєкти: гортай колесом або стрілками">
+              {projects.map((p) => (
+                <a class="tk-project" href="#projects-lens" data-name={p.name} data-meta={p.meta} data-tags={p.tags} data-cursor="View"><img src={photo(p.hue, 720, 900)} alt={p.name} /></a>
+              ))}
+            </div>
+            <div class="tk-lens__meta"></div>
+          </div>
+        )}
+        {d.id === 'entry' && (
+          <div class="g">
+            <p class="lead" style="grid-column: span 7">На сайті вмикається атрибутом <code style="display:inline">data-entry</code> на body: показується раз за сесію, ≤2 с, Esc або клік пропускає, з «Reduce motion» не показується зовсім.</p>
+            <div style="grid-column: 9 / span 4"><button class="btn" id="replay-entry" type="button" style="border:0; cursor:pointer; font: inherit; font-weight: 700">Програти вхід</button></div>
+          </div>
+        )}
+        {d.id === 'cursor' && (
+          <div class="g">
+            <figure style="grid-column: span 7; aspect-ratio: 16/10" data-lens data-cursor="Drag"><img src={photo(210, 1600, 1000)} alt="" /><img class="tk-lens__reveal" src={photo(60, 1600, 1000)} alt="" /></figure>
+            <div style="grid-column: 9 / span 4; display: flex; flex-direction: column; gap: 16px; align-items: flex-start">
+              <p style="color:#8f8e88; margin:0">Наведи на фото: лінза відкриває друге зображення (до/після, wireframe/фінал). Кнопки й картки з <code style="display:inline">data-cursor</code> показують підпис. На тач-екранах вимкнено.</p>
+              <a class="btn" href="#cursor" data-cursor="Write">Let’s talk</a>
+              <a class="chip" href="#cursor" data-cursor="Case">Chelsea FC</a>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  ))}
+  <div style="height: 50vh"></div>
+
   <script>
     import { initMotion } from './presets/reveal';
-    document.fonts.ready.then(() => initMotion());
+    import { initCompose, showEntry } from './presets/compose';
+    document.fonts.ready.then(() => { initMotion(); initCompose(); });
+    document.getElementById('replay-entry')?.addEventListener('click', () => showEntry({ text: 'Ivan Khoma', force: true }));
   </script>
 </body>
 </html>
