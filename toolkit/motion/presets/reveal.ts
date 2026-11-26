@@ -94,13 +94,14 @@ function parallaxFallback() {
     const r = el.getBoundingClientRect();
     const p = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2); // -1..1 across the viewport
     const k = Number(el.dataset.parallax || 0.15);
-    el.style.transform = `translateY(${(p * k * 50).toFixed(2)}%)`;
+    el.style.transform = `translateY(${(p * k * 60).toFixed(2)}vh)`;
   }
 }
 
 /* ---------- init ---------- */
 
 let io: IntersectionObserver | null = null;
+const watched = new Map<Element, HTMLElement[]>();
 
 export function initMotion(root: ParentNode = document) {
   const stagger = (sel: string) => {
@@ -125,16 +126,27 @@ export function initMotion(root: ParentNode = document) {
   if (reduced()) {
     targets.forEach((el) => el.classList.add('is-in'));
   } else {
+    // Chrome counts a target's own clip-path in IntersectionObserver, so an element that starts
+    // fully clipped (data-reveal="clip") never "intersects". Watch its parent instead.
     io ??= new IntersectionObserver((entries) => {
       for (const e of entries) {
         if (!e.isIntersecting) continue;
-        const el = e.target as HTMLElement;
-        el.classList.add('is-in');
-        if (el.hasAttribute('data-scramble')) scramble(el);
-        if (el.dataset.once !== 'false') io!.unobserve(el);
+        const els = watched.get(e.target) ?? [];
+        for (const el of els) {
+          el.classList.add('is-in');
+          if (el.hasAttribute('data-scramble')) scramble(el);
+        }
+        if (els.every((el) => el.dataset.once !== 'false')) { io!.unobserve(e.target); watched.delete(e.target); }
       }
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.01 });
-    targets.forEach((el) => io!.observe(el));
+    targets.forEach((el) => {
+      const cp = getComputedStyle(el).clipPath;
+      const watch = cp && cp !== 'none' && el.parentElement ? el.parentElement : el;
+      const list = watched.get(watch) ?? [];
+      if (!list.includes(el)) list.push(el);
+      watched.set(watch, list);
+      io!.observe(watch);
+    });
   }
 
   const px = [...root.querySelectorAll<HTMLElement>('[data-parallax]')];

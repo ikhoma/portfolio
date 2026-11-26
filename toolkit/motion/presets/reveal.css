@@ -121,7 +121,8 @@
 [data-marquee] .tk-marquee__track > * { flex: none; }
 
 @keyframes tk-parallax {
-  from { transform: translateY(calc(var(--tk-parallax, 0.15) * 50%)); }
-  to { transform: translateY(calc(var(--tk-parallax, 0.15) * -50%)); }
+  /* ±k·60vh across the viewport: 0.15 ≈ subtle, 0.35 ≈ clearly layered */
+  from { transform: translateY(calc(var(--tk-parallax, 0.15) * 60vh)); }
+  to { transform: translateY(calc(var(--tk-parallax, 0.15) * -60vh)); }
 }
 @keyframes tk-marquee { to { transform: translateX(-50%); } }
