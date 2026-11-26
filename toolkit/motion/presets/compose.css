@@ -34,7 +34,7 @@
 @keyframes tk-stack-sink { to { transform: scale(0.92); filter: brightness(0.45); border-radius: 24px; } }
 
 /* ---------- index nav ---------- */
-[data-index] { position: sticky; top: var(--tk-index-top, 96px); display: flex; flex-direction: column; gap: 10px; font-size: 13px; }
+[data-index] { position: sticky; top: var(--tk-index-top, 96px); align-self: start; height: max-content; display: flex; flex-direction: column; gap: 10px; font-size: 13px; }
 [data-index] a { display: grid; grid-template-columns: 2.5em 1fr; gap: 8px; color: var(--tk-index-muted, #7f7f7a); text-decoration: none; transition: color var(--dur-fast) var(--ease-out), transform var(--dur-base) var(--ease-out); }
 [data-index] a:hover { color: var(--tk-index-text, #ececec); }
 [data-index] a.is-active { color: var(--tk-index-text, #ececec); transform: translateX(4px); }
