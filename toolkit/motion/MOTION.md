@@ -102,9 +102,9 @@ Import the CSS once, call `initMotion()` after fonts load:
 |---|---|---|
 | `data-reveal="lines"` | lines rise from a mask, staggered (plain text only — inline markup is flattened) | Lama Lama, ERA |
 | `data-reveal="fade-up"` | opacity + translateY; siblings stagger automatically | ERA, Shopify Editions |
-| `data-reveal="clip"` + `data-clip="up\|left\|center"` | clip-path reveal, image settles from 1.12 scale | Son Daven, Lando Norris |
+| `data-reveal="clip"` + `data-clip="up\|left\|center"` | clip-path reveal, image settles from 1.12 scale (triggered by its parent entering — Chrome ignores fully clipped targets) | Son Daven, Lando Norris |
 | `data-reveal="blinds"` + `data-stripes` | image opens through vertical stripes (`--tk-blinds-color` = page bg) | Son Daven |
-| `data-parallax="0.2"` | drift while crossing the viewport; negative = other way. Scroll-driven CSS, JS fallback | Son Daven, ERA, Lando |
+| `data-parallax="0.2"` | drift of ±k·60vh while crossing the viewport; negative = other way. Scroll-driven CSS; JS when the browser lacks it or a wrapper has `overflow: hidden/auto` (prefer `overflow: clip` on wrappers) | Son Daven, ERA, Lando |
 | `data-draw` on `<hr>` / `.tk-rule` / `<svg>` | rules grow, SVG strokes draw in sequence | ERA, Shopify Editions |
 | `data-scramble` (+ `data-duration`) | short labels / numbers scramble then settle | Lama Lama, Locomotive |
 | `data-marquee` (+ `data-speed` px/s, `data-direction="right"`) | endless strip, pauses on hover | Son Daven, ERA |
