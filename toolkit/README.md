@@ -10,6 +10,7 @@ Two audiences, two formats:
 |---|---|---|
 | Claude (and any coding agent) | Markdown rules, read before building UI | `*/GRID.md`, `*/MOTION.md`, this README |
 | People (Ivan, clients, team) | Visual HTML guide | `docs/index.html` |
+| Everyone | Concept: what the toolkit is, every module, order | `docs/CONCEPT.md` |
 | Everyone | Product decisions: what gets built, when, why | `docs/decisions/` |
 
 ## Principles
@@ -59,5 +60,7 @@ toolkit/
     catalog.json       ← every motion reference, tagged
     references/        ← frames / contact sheets of references (videos stay out of git)
   docs/
+    CONCEPT.md         ← what the toolkit is, all modules, order
+    decisions/         ← numbered product decisions
     index.html         ← visual guide for people
 ```
