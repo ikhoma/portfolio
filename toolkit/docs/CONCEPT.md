@@ -104,14 +104,14 @@ Every module aims for the same four parts, so working in any of them feels the s
   fade-up, clip, blinds, draw, parallax, scramble, marquee, spring hover; batch 2
   composition: section stack, index nav, project browser (rows / lens), once-per-session
   entry, follower cursor and image lens.
-- **References:** 2026 slice (19 sites: Awwwards and FWA sites of the month, Godly, and studios such
+- **References:** 2020 slice (pre-AI era: 9 Awwwards winners analysed, 5 of 15 already offline) and 2026 slice (19 sites: Awwwards and FWA sites of the month, Godly, and studios such
   as Obys, Locomotive, Exo Ape, Lama Lama), 18 patterns with Ivan's decisions; Ivan's Telegram channel
   of saved animations as the next source. FWA relaunched on 3 Nov 2026 without Site of the Day / Month (winners now enter one "canon" at an 80 % jury yes); FWA of the Year 2026 is voted in January 2027 — add it then. Future FWA slices take canon winners.
   Game-like sites are skipped and only counted (4 in 2026).
 - **Open:**
   - batch 3: pinned-object (pinned iPhone, screens change while features scroll); floating-nav parked;
   - presets not yet wired into real portfolio pages;
-  - undecided: gesture-hint, screen-frame (from the FWA pass);
+  - undecided: gesture-hint, screen-frame (FWA pass), film-intro (2020 pass);
   - slices for 2024–2025; Telegram export ingestion;
   - "motion character" sets (calm / confident / bold) that retune all presets at once (proposal).
 

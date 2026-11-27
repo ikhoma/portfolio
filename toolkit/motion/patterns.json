@@ -44,7 +44,9 @@
       "lando-norris",
       "renaissance",
       "era-residence",
-      "ivress"
+      "ivress",
+      "twoc",
+      "greta"
     ],
     "params": "дисплей ls −0.02…−0.06em · лейбли UPPERCASE ls +0.05…+0.08em",
     "use_for": "Заголовки розділів кейсів («Impact», «Process»), About.",
@@ -65,7 +67,10 @@
       "oryzo",
       "santioni",
       "ivress",
-      "shader"
+      "shader",
+      "aliali",
+      "synchronized",
+      "powerhouse"
     ],
     "params": "150–250px · lh 0.8–0.9",
     "use_for": "Hero кейсу: назва продукту (CHELSEA, FIBA) як графіка; ініціали ІХ на Home.",
@@ -118,7 +123,8 @@
     "transfer": "css+js",
     "examples": [
       "oryzo",
-      "exo-ape"
+      "exo-ape",
+      "greta"
     ],
     "params": "sticky + scrub; WebGL не обов'язковий — підходить відео/секвенція зображень",
     "use_for": "Кейси мобільних застосунків: закріплений iPhone з екранами Chelsea/FIBA, поки збоку змінюються фічі.",
@@ -154,7 +160,8 @@
       "renaissance",
       "obys",
       "era-residence",
-      "ivress"
+      "ivress",
+      "pioneer"
     ],
     "params": "nav-item-in 1s · stagger 40ms",
     "use_for": "Ліва колонка кейсу (вже маємо LeftRail — розвинути в індекс розділів).",
@@ -174,7 +181,8 @@
       "lama-lama",
       "harry-atkins",
       "lando-norris",
-      "shader"
+      "shader",
+      "twoc"
     ],
     "params": "expo-out 1000ms · CSS spring linear() 1600ms",
     "use_for": "Home: список кейсів (Chelsea, FIBA, Emagine, Jack…).",
@@ -196,7 +204,10 @@
       "floema",
       "lama-lama",
       "primland",
-      "ivress"
+      "ivress",
+      "menken",
+      "twoc",
+      "greta"
     ],
     "params": "≤ 2–3s · раз за сесію",
     "use_for": "Короткий вхід на Home лише при першому візиті (наприклад, ініціали + сітка).",
@@ -213,7 +224,8 @@
     "transfer": "css",
     "examples": [
       "era-residence",
-      "renaissance"
+      "renaissance",
+      "menken"
     ],
     "params": "0.8s InOut (UI) · 3–6s (декор)",
     "use_for": "Роздільники секцій, схеми user flow у кейсах.",
@@ -265,7 +277,9 @@
     "transfer": "css",
     "examples": [
       "son-daven",
-      "era-residence"
+      "era-residence",
+      "twoc",
+      "synchronized"
     ],
     "params": "5–32s linear · repeat",
     "use_for": "Клієнти (Chelsea, FIBA, USGA, IndyCar, FINA) на Home/About.",
@@ -281,7 +295,8 @@
     "category": "menu",
     "transfer": "css",
     "examples": [
-      "lama-lama"
+      "lama-lama",
+      "powerhouse"
     ],
     "params": "—",
     "use_for": "Глобальна навігація портфоліо замість фіксованої лівої колонки на мобільному.",
@@ -318,6 +333,23 @@
     "params": "border-radius + inset shadow + text-shadow; без WebGL",
     "use_for": "Можливо, кейси мобільних застосунків: контент у рамці пристрою.",
     "avoid_for": "Коли рамка краде площу в контенту або сперечається з брендом кейсу.",
+    "decision": null,
+    "decided": null,
+    "status": "undecided",
+    "preset": null
+  },
+  {
+    "id": "film-intro",
+    "name": "Фільм-інтро з таймером і Skip",
+    "category": "loader",
+    "transfer": "css",
+    "examples": [
+      "delassus",
+      "menken"
+    ],
+    "params": "відео 30–60s; таймер; Skip завжди видно",
+    "use_for": "Можливо, кейс, що відкривається коротким роликом продукту.",
+    "avoid_for": "Головна портфоліо — довгий вхід дратує при повторних візитах.",
     "decision": null,
     "decided": null,
     "status": "undecided",

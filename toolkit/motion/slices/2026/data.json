@@ -51,7 +51,8 @@
    ],
    "year": 2026,
    "why": "Awwwards Site of the Month, травень 2026 · студія Bürocratik",
-   "look": "Стек повноекранних секцій, які наїжджають одна на одну; хмара зображень навколо заголовка на вході."
+   "look": "Стек повноекранних секцій, які наїжджають одна на одну; хмара зображень навколо заголовка на вході.",
+   "slice": 2026
   },
   {
    "id": "son-daven",
@@ -120,7 +121,8 @@
    ],
    "year": 2026,
    "why": "Awwwards Site of the Month, червень 2026 · студія The First The Last",
-   "look": "Інтро-«жалюзі», clip-path reveal, паралакс фото, безкінечна стрічка."
+   "look": "Інтро-«жалюзі», clip-path reveal, паралакс фото, безкінечна стрічка.",
+   "slice": 2026
   },
   {
    "id": "lama-lama",
@@ -182,7 +184,8 @@
    ],
    "year": 2026,
    "why": "Awwwards Site of the Month, липень 2026 · сайт студії",
-   "look": "Текст по рядках з маскою, scramble-лейбли, рядки проєктів зі стрічкою прев'ю, плаваюча навігація."
+   "look": "Текст по рядках з маскою, scramble-лейбли, рядки проєктів зі стрічкою прев'ю, плаваюча навігація.",
+   "slice": 2026
   },
   {
    "id": "era-residence",
@@ -259,7 +262,8 @@
    ],
    "year": 2026,
    "why": "Awwwards Site of the Month, серпень 2026 · студія The First The Last",
-   "look": "Горизонтальний скрол, вирізані об'єкти з паралаксом, тонкі лінії, що малюються, лічильник прогресу."
+   "look": "Горизонтальний скрол, вирізані об'єкти з паралаксом, тонкі лінії, що малюються, лічильник прогресу.",
+   "slice": 2026
   },
   {
    "id": "why-zero",
@@ -300,7 +304,8 @@
    ],
    "year": 2026,
    "why": "Awwwards Site of the Month, вересень 2026 + FWA of the Month, липень 2026",
-   "look": "Вхід жестом: треба намалювати нуль; HUD-елементи з мерехтінням."
+   "look": "Вхід жестом: треба намалювати нуль; HUD-елементи з мерехтінням.",
+   "slice": 2026
   },
   {
    "id": "santioni",
@@ -337,7 +342,8 @@
    ],
    "year": 2026,
    "why": "Awwwards Site of the Month, жовтень 2026 + FWA of the Month, серпень 2026 · студія Active Theory",
-   "look": "Гравюрний лоадер і розділений заголовок на age-gate. Далі age-gate не проходили."
+   "look": "Гравюрний лоадер і розділений заголовок на age-gate. Далі age-gate не проходили.",
+   "slice": 2026
   },
   {
    "id": "oryzo",
@@ -391,7 +397,8 @@
    ],
    "year": 2026,
    "why": "Awwwards Site of the Month, квітень 2026 + FWA of the Month, березень 2026 · студія Lusion",
-   "look": "Закріплений продукт у центрі, поки довкола змінюється історія; слова проявляються з розмиття."
+   "look": "Закріплений продукт у центрі, поки довкола змінюється історія; слова проявляються з розмиття.",
+   "slice": 2026
   },
   {
    "id": "renaissance",
@@ -460,7 +467,8 @@
    ],
    "year": 2026,
    "why": "Awwwards Site of the Month, лютий 2026 + FWA of the Month, лютий 2026",
-   "look": "Липкий зміст із римськими номерами, обкладинки розділів, пружний hover, малювання ліній рамки."
+   "look": "Липкий зміст із римськими номерами, обкладинки розділів, пружний hover, малювання ліній рамки.",
+   "slice": 2026
   },
   {
    "id": "gq-ap",
@@ -504,7 +512,8 @@
    ],
    "year": 2026,
    "why": "Awwwards Site of the Month, березень 2026 · студія Immersive Garden",
-   "look": "Історія в 3D: з темряви збирається каркасна лабораторія, тонкий гігантський заголовок поверх сцени, звук."
+   "look": "Історія в 3D: з темряви збирається каркасна лабораторія, тонкий гігантський заголовок поверх сцени, звук.",
+   "slice": 2026
   },
   {
    "id": "locomotive",
@@ -562,7 +571,8 @@
    ],
    "year": 2024,
    "why": "Топова студія · Awwwards Agency of the Year 2024",
-   "look": "Піксельна мозаїка поверх фото, текст із вбудованими піктограмами, спокійний швейцарський футер."
+   "look": "Піксельна мозаїка поверх фото, текст із вбудованими піктограмами, спокійний швейцарський футер.",
+   "slice": 2026
   },
   {
    "id": "obys",
@@ -627,7 +637,8 @@
    ],
    "year": 2023,
    "why": "Топова студія · Awwwards Studio of the Year 2023",
-   "look": "Вертикальна «лінза» проєктів, список-індекс, перемикач Vertical / Horizontal / Grid, пружний easing на CSS."
+   "look": "Вертикальна «лінза» проєктів, список-індекс, перемикач Vertical / Horizontal / Grid, пружний easing на CSS.",
+   "slice": 2026
   },
   {
    "id": "exo-ape",
@@ -684,7 +695,8 @@
    ],
    "year": null,
    "why": "Топова студія (без нагороди в цьому зрізі)",
-   "look": "«Play Reel», де відео розсуває слова; гігантське слово за краєм екрана; футер-історія з 3D-об'єктом."
+   "look": "«Play Reel», де відео розсуває слова; гігантське слово за краєм екрана; футер-історія з 3D-об'єктом.",
+   "slice": 2026
   },
   {
    "id": "lando-norris",
@@ -749,7 +761,8 @@
    ],
    "year": 2025,
    "why": "Awwwards Site of the Year 2025 · студія OFF+BRAND. · спорт, як твої кейси",
-   "look": "Обличчя ↔ шолом під курсором, колаж із паралаксом, кольорові переходи між розділами."
+   "look": "Обличчя ↔ шолом під курсором, колаж із паралаксом, кольорові переходи між розділами.",
+   "slice": 2026
   },
   {
    "id": "unseen",
@@ -794,7 +807,8 @@
    ],
    "year": null,
    "why": "Топова студія (без нагороди в цьому зрізі)",
-   "look": "Вхід із вибором звуку, сюрреалістична 3D-сцена в hero, заголовок курсив + гротеск."
+   "look": "Вхід із вибором звуку, сюрреалістична 3D-сцена в hero, заголовок курсив + гротеск.",
+   "slice": 2026
   },
   {
    "id": "harry-atkins",
@@ -843,7 +857,8 @@
    ],
    "year": 2026,
    "why": "Godly / recent.design, розділ Websites",
-   "look": "Гігантські ініціали, що стискаються на скролі; один кегль на весь сайт."
+   "look": "Гігантські ініціали, що стискаються на скролі; один кегль на весь сайт.",
+   "slice": 2026
   },
   {
    "id": "gregor-collienne",
@@ -879,7 +894,8 @@
    ],
    "year": 2026,
    "why": "Godly / recent.design, розділ Websites",
-   "look": "Поле фотографій навколо імені, курсор-хрестик. Портфоліо фотографа."
+   "look": "Поле фотографій навколо імені, курсор-хрестик. Портфоліо фотографа.",
+   "slice": 2026
   },
   {
    "id": "primland",
@@ -938,7 +954,8 @@
    ],
    "year": 2026,
    "why": "FWA of the Month, січень 2026 · студія Outpost",
-   "look": "3D-карта маєтку як головний інтерфейс: вхід зі вибором звуку, підказки жестів «drag / scroll», розріджені капітелі."
+   "look": "3D-карта маєтку як головний інтерфейс: вхід зі вибором звуку, підказки жестів «drag / scroll», розріджені капітелі.",
+   "slice": 2026
   },
   {
    "id": "shader",
@@ -997,7 +1014,8 @@
    ],
    "year": 2026,
    "why": "FWA of the Month, квітень 2026 · сайт студії",
-   "look": "Політ у екран ретро-комп'ютера на скрол, роботи на вигнутій кіноплівці, увесь сайт як CRT-монітор."
+   "look": "Політ у екран ретро-комп'ютера на скрол, роботи на вигнутій кіноплівці, увесь сайт як CRT-монітор.",
+   "slice": 2026
   },
   {
    "id": "ivress",
@@ -1062,12 +1080,437 @@
    ],
    "year": 2026,
    "why": "FWA of the Month, травень 2026 · студії Laugh Mind і Utsubo",
-   "look": "Історія з 9 глав з лічильником 01/09, гігантський стиснутий сериф + розріджений гротеск, лоадер-маскот."
+   "look": "Історія з 9 глав з лічильником 01/09, гігантський стиснутий сериф + розріджений гротеск, лоадер-маскот.",
+   "slice": 2026
+  },
+  {
+   "id": "pioneer",
+   "name": "Pioneer — Corn Revolutionized",
+   "url": "https://cornrevolution.resn.global/",
+   "source": "Awwwards SOTM Jul 2020",
+   "studio": "Resn",
+   "stack": [
+    "Three.js",
+    "GSAP"
+   ],
+   "type": "широкий гротеск капсом на темному тлі; дрібний гротеск для тексту",
+   "easings": [],
+   "durations": [
+    "100–500ms на UI",
+    "1.5s"
+   ],
+   "shots": [
+    "shots/2020-pioneer-1.jpg",
+    "shots/2020-pioneer-2.jpg",
+    "shots/2020-pioneer-3.jpg"
+   ],
+   "why": "Awwwards Site of the Year 2020 + Site of the Month, липень 2020 · студія Resn",
+   "look": "Частинки, що на скрол збираються в спіраль ДНК, потім у граф вузлів; глави з точковою навігацією справа.",
+   "moments": [
+    {
+     "cat": "loader",
+     "name": "Лоадер з логотипом і відсотками",
+     "what": "Темний екран, контурний логотип і лічильник «Loading your experience».",
+     "params": "—",
+     "transfer": "css"
+    },
+    {
+     "cat": "media",
+     "name": "Частинки → спіраль ДНК → граф",
+     "what": "На скрол хмара світних частинок складається в подвійну спіраль, далі розпадається на вузли-зв'язки, що ілюструють текст глави.",
+     "params": "WebGL particles; scrub від скролу",
+     "transfer": "webgl"
+    },
+    {
+     "cat": "scroll-linked",
+     "name": "Глави з точковою навігацією",
+     "what": "Праворуч назва розділу (SCIENCE) і точки глав; кругла кнопка «Explore» з обертовим кільцем.",
+     "params": "кільце обертається повільно",
+     "transfer": "css+js"
+    },
+    {
+     "cat": "text",
+     "name": "Великий заголовок капсом поверх 3D",
+     "what": "Короткі фрази капсом («FIRST, A SOLID FOUNDATION.») зліва, під ними абзац; 3D живе праворуч.",
+     "params": "широкий гротеск, caps",
+     "transfer": "css"
+    }
+   ],
+   "slice": 2020,
+   "year": 2020
+  },
+  {
+   "id": "greta",
+   "name": "The Year of Greta",
+   "url": "https://theyearofgreta.com/",
+   "source": "Awwwards SOTM Feb 2020",
+   "studio": "passion project",
+   "stack": [
+    "Three.js (4 canvas)"
+   ],
+   "type": "Brown (гротеск) для UI + великий сериф для імені й місяців",
+   "easings": [
+    "cubic-bezier(0.25, 0.25, 0.75, 0.75) — майже лінійна"
+   ],
+   "durations": [],
+   "shots": [
+    "shots/2020-greta-1.jpg",
+    "shots/2020-greta-2.jpg",
+    "shots/2020-greta-3.jpg"
+   ],
+   "why": "Awwwards Site of the Month, лютий 2020",
+   "look": "3D-статуя в центрі, навколо пропливають фото місяців 2019 року; ім'я великим серифом позаду статуї.",
+   "moments": [
+    {
+     "cat": "loader",
+     "name": "Вхід із проханням увімкнути звук",
+     "what": "Кругла кнопка play і підпис «для глибшого досвіду увімкніть звук».",
+     "params": "—",
+     "transfer": "css"
+    },
+    {
+     "cat": "scroll-linked",
+     "name": "Закріплена 3D-статуя, довкола змінюється рік",
+     "what": "Статуя Ґрети стоїть на камені по центру; на скрол навколо неї пропливають фото й відео подій, місяць змінюється внизу.",
+     "params": "WebGL; scrub",
+     "transfer": "webgl"
+    },
+    {
+     "cat": "text",
+     "name": "Ім'я великим серифом за об'єктом",
+     "what": "«Greta Thunberg» величезним серифом приглушеним кольором позаду статуї — об'єкт між шарами тексту.",
+     "params": "сериф ~170px, низький контраст",
+     "transfer": "css"
+    },
+    {
+     "cat": "scroll-linked",
+     "name": "Шкала JAN — DEC угорі",
+     "what": "Тонка лінія прогресу року між підписами JAN і DEC.",
+     "params": "—",
+     "transfer": "css+js"
+    }
+   ],
+   "slice": 2020,
+   "year": 2020
+  },
+  {
+   "id": "powerhouse",
+   "name": "Powerhouse Company",
+   "url": "https://www.powerhouse-company.com/",
+   "source": "Awwwards SOTM Apr 2020",
+   "studio": "",
+   "stack": [
+    "Three.js"
+   ],
+   "type": "гротеск; гігантське слово позаду фото",
+   "easings": [],
+   "durations": [],
+   "shots": [
+    "shots/2020-powerhouse-1.jpg",
+    "shots/2020-powerhouse-2.jpg"
+   ],
+   "note": "Дивились поточну версію сайту — вона могла змінитись після 2020.",
+   "why": "Awwwards Site of the Month, квітень 2020",
+   "look": "Поле фотографій проєктів, за якими проїжджає гігантське слово; плаваюча навігація-пігулка зверху.",
+   "moments": [
+    {
+     "cat": "scroll-linked",
+     "name": "Гігантське слово за полем фото",
+     "what": "Фото архітектурних проєктів розкидані сіткою, між ними та за ними на скрол проїжджає слово великим гротеском.",
+     "params": "WebGL-площини",
+     "transfer": "webgl"
+    },
+    {
+     "cat": "menu",
+     "name": "Плаваюча навігація-пігулка",
+     "what": "Чотири пункти в білій пігулці по центру зверху, поверх контенту.",
+     "params": "—",
+     "transfer": "css"
+    }
+   ],
+   "slice": 2020,
+   "year": 2020
+  },
+  {
+   "id": "menken",
+   "name": "Alan Menken",
+   "url": "https://www.alanmenken.com/",
+   "source": "Awwwards SOTM May 2020",
+   "studio": "",
+   "stack": [
+    "GSAP"
+   ],
+   "type": "Clearface (сериф) 16/19, ls +0.67px; підпис-автограф як логотип",
+   "easings": [
+    "cubic-bezier(0.6, 0, 0.1, 1) — різкий in-out",
+    "cubic-bezier(0.39, 0.575, 0.565, 1) — sine-out"
+   ],
+   "durations": [
+    "150–750ms"
+   ],
+   "shots": [
+    "shots/2020-menken-1.jpg"
+   ],
+   "why": "Awwwards Site of the Month, травень 2020",
+   "look": "Вхід з автографом, що малюється, і проханням увімкнути звук; далі кіноінтро з підписами й кнопкою Skip.",
+   "moments": [
+    {
+     "cat": "loader",
+     "name": "Автограф малюється на вході",
+     "what": "Чорний екран, «Turn on your sound», підпис композитора промальовується лінією, під ним фраза і Enter.",
+     "params": "SVG stroke draw",
+     "transfer": "css"
+    },
+    {
+     "cat": "media",
+     "name": "Кіноінтро з підписами",
+     "what": "Після входу — монтаж фрагментів фільмів під музику, по центру короткі фрази серифом; Skip у куті.",
+     "params": "відео + fade тексту",
+     "transfer": "css"
+    }
+   ],
+   "slice": 2020,
+   "year": 2020
+  },
+  {
+   "id": "delassus",
+   "name": "Delassus",
+   "url": "https://delassus.com",
+   "source": "Awwwards SOTM Jun 2020",
+   "studio": "",
+   "stack": [
+    "canvas"
+   ],
+   "type": "Sailec (гротеск); у відео — 3D-цифри й слова",
+   "easings": [
+    "cubic-bezier(0.86, 0, 0.07, 1) — easeInOutQuint",
+    "cubic-bezier(0.215, 0.61, 0.355, 1) — easeOutCubic",
+    "cubic-bezier(0.23, 1, 0.32, 1) — quint-out"
+   ],
+   "durations": [
+    "200ms–1.4s"
+   ],
+   "shots": [
+    "shots/2020-delassus-1.jpg",
+    "shots/2020-delassus-2.jpg"
+   ],
+   "why": "Awwwards Site of the Month, червень 2020",
+   "look": "50-секундний фільм-інтро з 3D-типографікою (1948, 3000 HA), таймер і кнопка звуку, Skip.",
+   "moments": [
+    {
+     "cat": "loader",
+     "name": "Фільм-інтро з 3D-типографікою",
+     "what": "Історія компанії як короткий фільм: цифри й слова стоять як 3D-об'єкти в декораціях.",
+     "params": "відео ~50s",
+     "transfer": "css"
+    },
+    {
+     "cat": "micro",
+     "name": "Таймер і кругла кнопка звуку",
+     "what": "Під відео відлік 00:50 і червона кругла кнопка звуку з кільцем прогресу.",
+     "params": "—",
+     "transfer": "css"
+    }
+   ],
+   "slice": 2020,
+   "year": 2020
+  },
+  {
+   "id": "aliali",
+   "name": "Ali Ali",
+   "url": "https://alitwotimes.com/",
+   "source": "Awwwards SOTM Aug 2020",
+   "studio": "Exo Ape",
+   "stack": [
+    "—"
+   ],
+   "type": "Monument Grotesk; ім'я гігантським гротеском",
+   "easings": [],
+   "durations": [
+    "400ms",
+    "1s",
+    "10s"
+   ],
+   "shots": [
+    "shots/2020-aliali-1.jpg",
+    "shots/2020-aliali-2.jpg"
+   ],
+   "note": "Сайт оновлювали (шоурил 2024), структура з 2020 збереглась.",
+   "why": "Awwwards Site of the Month, серпень 2020 · студія Exo Ape",
+   "look": "Ім'я «ali ali» гігантським гротеском, зернисте тло, асиметрична сітка відео, що проявляється.",
+   "moments": [
+    {
+     "cat": "text",
+     "name": "Гігантське ім'я",
+     "what": "«ali ali» на третину екрана праворуч, дрібний текст по кутах.",
+     "params": "гротеск ~250px, щільний трекінг",
+     "transfer": "css"
+    },
+    {
+     "cat": "micro",
+     "name": "Зернисте тло",
+     "what": "Світле тло з шумом-зерном, як папір.",
+     "params": "noise texture",
+     "transfer": "css"
+    },
+    {
+     "cat": "scroll-reveal",
+     "name": "Асиметрична сітка відео",
+     "what": "Роботи — відео різного розміру зі зсувом по сітці; проявляються з прозорості на скрол.",
+     "params": "fade ~1s",
+     "transfer": "css+js"
+    }
+   ],
+   "slice": 2020,
+   "year": 2020
+  },
+  {
+   "id": "twoc",
+   "name": "2°C Earth",
+   "url": "https://www.2-c.earth/",
+   "source": "Awwwards SOTM Sep 2020",
+   "studio": "",
+   "stack": [
+    "—"
+   ],
+   "type": "Scto Grotesk A капсом + сериф для країн; 43/48px",
+   "easings": [
+    "cubic-bezier(0.075, 0.82, 0.165, 1) — easeOutCirc",
+    "cubic-bezier(0.19, 1, 0.22, 1) — expo-out",
+    "cubic-bezier(0.645, 0.045, 0.355, 1) — easeInOutCubic"
+   ],
+   "durations": [
+    "200–800ms",
+    "20–60s (стрічки)"
+   ],
+   "shots": [
+    "shots/2020-twoc-1.jpg",
+    "shots/2020-twoc-2.jpg",
+    "shots/2020-twoc-3.jpg"
+   ],
+   "why": "Awwwards Site of the Month, вересень 2020",
+   "look": "Лоадер-стрічка «Loaded—100% / Click anywhere to enter», список місць гротеск+сериф, при наведенні — фото на весь екран.",
+   "moments": [
+    {
+     "cat": "loader",
+     "name": "Лоадер-стрічка",
+     "what": "Чорний екран, безкінечна стрічка «LOADED—100% · CLICK ANYWHERE TO ENTER».",
+     "params": "marquee 20–30s",
+     "transfer": "css"
+    },
+    {
+     "cat": "text",
+     "name": "Заява-інтро з Skip",
+     "what": "Одна фраза про потепління по центру білого екрана, далі зникає; «Skip intro» внизу.",
+     "params": "fade",
+     "transfer": "css"
+    },
+    {
+     "cat": "carousel",
+     "name": "Список місць: наведення відкриває фото",
+     "what": "П'ять рядків «HOI AN ANCIENT TOWN, Vietnam» (гротеск капсом + сериф); при наведенні рядок лишається яскравим, решта тьмяніє, за ними — фото місця на весь блок.",
+     "params": "opacity + image fade ~0.6s",
+     "transfer": "css+js"
+    },
+    {
+     "cat": "micro",
+     "name": "Багатомовна стрічка внизу",
+     "what": "«Welcome to our ever-changing world» різними мовами біжить уздовж низу.",
+     "params": "marquee ~60s",
+     "transfer": "css"
+    }
+   ],
+   "slice": 2020,
+   "year": 2020
+  },
+  {
+   "id": "chile20",
+   "name": "adidas — CHILE20",
+   "url": "https://adidaschile20.com/",
+   "source": "Awwwards SOTM Oct 2020",
+   "studio": "",
+   "stack": [
+    "canvas (WebGL)"
+   ],
+   "type": "гротеск капсом з широким трекінгом",
+   "easings": [],
+   "durations": [],
+   "shots": [
+    "shots/2020-chile20-1.jpg",
+    "shots/2020-chile20-2.jpg"
+   ],
+   "why": "Awwwards Site of the Month, жовтень 2020",
+   "look": "3D-шоурум: три моделі курток у темній залі з неоном, «Select a product to begin».",
+   "moments": [
+    {
+     "cat": "loader",
+     "name": "Інтро «presents» + звук",
+     "what": "Логотипи брендів, «PRESENTS», «Click to enable sound».",
+     "params": "—",
+     "transfer": "css"
+    },
+    {
+     "cat": "media",
+     "name": "3D-шоурум продуктів",
+     "what": "Реалістичні 3D-моделі одягу в декорації з неоном і віддзеркаленням; вибір продукту відкриває його.",
+     "params": "WebGL",
+     "transfer": "webgl"
+    }
+   ],
+   "slice": 2020,
+   "year": 2020
+  },
+  {
+   "id": "synchronized",
+   "name": "Synchronized Studio",
+   "url": "https://synchronized.studio/",
+   "source": "Awwwards Mobile Site of the Year 2020",
+   "studio": "Synchronized (сайт студії)",
+   "stack": [
+    "canvas"
+   ],
+   "type": "стиснутий контрастний сериф гігантським кеглем + дрібний гротеск капсом",
+   "easings": [],
+   "durations": [
+    "150ms–1.2s",
+    "10–30s (стрічки, обертання)"
+   ],
+   "shots": [
+    "shots/2020-synchronized-1.jpg",
+    "shots/2020-synchronized-2.jpg"
+   ],
+   "why": "Awwwards Mobile Site of the Year 2020 · сайт студії",
+   "look": "Гігантський стиснутий сериф, що перекриває сам себе, стрічка вгорі, вертикальний заголовок і текст по колу, що обертається.",
+   "moments": [
+    {
+     "cat": "text",
+     "name": "Гігантський стиснутий сериф",
+     "what": "«Synchronized Digital Creative» на весь екран, рядки зсунуті й частково накладаються; абзац гротеском посередині.",
+     "params": "сериф ~200px, lh < 1",
+     "transfer": "css"
+    },
+    {
+     "cat": "micro",
+     "name": "Стрічка вгорі",
+     "what": "«SYNCHRONIZED ARCHIVE» біжить уздовж верхнього краю.",
+     "params": "marquee",
+     "transfer": "css"
+    },
+    {
+     "cat": "text",
+     "name": "Вертикальний заголовок і текст по колу",
+     "what": "«Just About» повернуто на 90°, під ним напис по колу «How we can help», що повільно обертається; зверху — променистий знак.",
+     "params": "rotate 10–30s linear",
+     "transfer": "css"
+    }
+   ],
+   "slice": 2020,
+   "year": 2020
   }
  ],
  "meta": {
   "date": "2026-11-27",
-  "scope": "Тестовий зріз 2026",
+  "scope": "Зрізи 2026 і 2020",
   "sources": [
    "Awwwards Sites of the Month 2026 (січень–жовтень)",
    "The FWA — FWA of the Month 2026 (січень–жовтень), за архівом legacy.thefwa.com",
@@ -1080,6 +1523,16 @@
    "Santioni — далі age-gate не проходив",
    "FWA of the Year 2026 — ще не обрано: шортлист із 12 робіт збирають журі протягом року, переможця голосують у січні 2027",
    "Сайти-ігри — свідомо пропущені, лише фіксуємо кількість (4 за 2026)"
+  ],
+  "sources2020": [
+   "Awwwards Sites of the Month 2020 (січень–грудень)",
+   "Awwwards Annual Awards 2020: Site of the Year (Pioneer), Developer (Kode), E-commerce (Mammut), Mobile (Synchronized), Users' Choice (Dark)",
+   "FWA of the Year 2020 — Medal of Honor: Above & Beyond (теж Awwwards SOTM грудня)"
+  ],
+  "notCovered2020": [
+   "FWA of the Month 2020 — архів legacy.thefwa.com не віддає записи до 2026 року",
+   "5 сайтів недоступні (див. «Джерела»)",
+   "Kode — сайт-гра з персонажем, лише рахуємо"
   ]
  },
  "patterns": [
@@ -1124,7 +1577,9 @@
     "lando-norris",
     "renaissance",
     "era-residence",
-    "ivress"
+    "ivress",
+    "twoc",
+    "greta"
    ],
    "forUs": "Заголовки розділів кейсів («Impact», «Process»), About.",
    "avoid": "Більше двох гарнітур на екрані."
@@ -1142,7 +1597,10 @@
     "oryzo",
     "santioni",
     "ivress",
-    "shader"
+    "shader",
+    "aliali",
+    "synchronized",
+    "powerhouse"
    ],
    "forUs": "Hero кейсу: назва продукту (CHELSEA, FIBA) як графіка; ініціали ІХ на Home.",
    "avoid": "Мобільний без окремої адаптації розміру."
@@ -1186,7 +1644,8 @@
    "transfer": "css+js",
    "examples": [
     "oryzo",
-    "exo-ape"
+    "exo-ape",
+    "greta"
    ],
    "forUs": "Кейси мобільних застосунків: закріплений iPhone з екранами Chelsea/FIBA, поки збоку змінюються фічі.",
    "avoid": "Коли історія не має одного центрального об'єкта."
@@ -1216,7 +1675,8 @@
     "renaissance",
     "obys",
     "era-residence",
-    "ivress"
+    "ivress",
+    "pioneer"
    ],
    "forUs": "Ліва колонка кейсу (вже маємо LeftRail — розвинути в індекс розділів).",
    "avoid": "Мобільний — ховати в компактний прогрес."
@@ -1233,7 +1693,8 @@
     "lama-lama",
     "harry-atkins",
     "lando-norris",
-    "shader"
+    "shader",
+    "twoc"
    ],
    "forUs": "Home: список кейсів (Chelsea, FIBA, Emagine, Jack…).",
    "avoid": "Коли робіт мало (до 4) — лінза й віяло виглядають порожньо."
@@ -1252,7 +1713,10 @@
     "floema",
     "lama-lama",
     "primland",
-    "ivress"
+    "ivress",
+    "menken",
+    "twoc",
+    "greta"
    ],
    "forUs": "Короткий вхід на Home лише при першому візиті (наприклад, ініціали + сітка).",
    "avoid": "Кожен перехід між сторінками; кейси."
@@ -1266,7 +1730,8 @@
    "transfer": "css",
    "examples": [
     "era-residence",
-    "renaissance"
+    "renaissance",
+    "menken"
    ],
    "forUs": "Роздільники секцій, схеми user flow у кейсах.",
    "avoid": "—"
@@ -1309,7 +1774,9 @@
    "transfer": "css",
    "examples": [
     "son-daven",
-    "era-residence"
+    "era-residence",
+    "twoc",
+    "synchronized"
    ],
    "forUs": "Клієнти (Chelsea, FIBA, USGA, IndyCar, FINA) на Home/About.",
    "avoid": "Важлива інформація, яку треба прочитати."
@@ -1322,7 +1789,8 @@
    "params": "—",
    "transfer": "css",
    "examples": [
-    "lama-lama"
+    "lama-lama",
+    "powerhouse"
    ],
    "forUs": "Глобальна навігація портфоліо замість фіксованої лівої колонки на мобільному.",
    "avoid": "—"
@@ -1352,6 +1820,20 @@
    ],
    "forUs": "Можливо, кейси мобільних застосунків: контент у «рамці» пристрою.",
    "avoid": "Коли рамка краде площу в контенту або сперечається з брендом кейсу."
+  },
+  {
+   "id": "film-intro",
+   "cat": "loader",
+   "name": "Фільм-інтро з таймером і Skip",
+   "what": "Перед сайтом — короткий фільм (30–60 с) з таймером, кнопкою звуку й Skip; історія бренду або героя до основного інтерфейсу.",
+   "params": "відео; таймер; Skip завжди видно",
+   "transfer": "css",
+   "examples": [
+    "delassus",
+    "menken"
+   ],
+   "forUs": "Можливо, кейс-сторінка, що відкривається коротким роликом продукту.",
+   "avoid": "Головна портфоліо — довгий вхід дратує при повторних візитах."
   }
  ],
  "easings": [
@@ -1419,6 +1901,26 @@
    "curve": "cubic-bezier(0.625, 0.05, 0, 1)",
    "name": "різкий in-out",
    "where": "Explore Primland"
+  },
+  {
+   "curve": "cubic-bezier(0.86, 0, 0.07, 1)",
+   "name": "easeInOutQuint (Penner)",
+   "where": "Delassus (2020)"
+  },
+  {
+   "curve": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+   "name": "easeOutCubic (Penner)",
+   "where": "Delassus, Kode (2020)"
+  },
+  {
+   "curve": "cubic-bezier(0.075, 0.82, 0.165, 1)",
+   "name": "easeOutCirc (Penner)",
+   "where": "2°C Earth, Kode (2020)"
+  },
+  {
+   "curve": "cubic-bezier(0.6, 0, 0.1, 1)",
+   "name": "різкий in-out",
+   "where": "Alan Menken (2020)"
   }
  ],
  "insights": [
@@ -1468,19 +1970,68 @@
  "skipped": [
   {
    "name": "Bruno's Portfolio",
-   "why": "Awwwards Site of the Month, січень 2026"
+   "why": "Awwwards Site of the Month, січень 2026",
+   "slice": 2026
   },
   {
    "name": "Lacoste Ace Breaker",
-   "why": "FWA of the Month, червень 2026"
+   "why": "FWA of the Month, червень 2026",
+   "slice": 2026
   },
   {
    "name": "Awards Racing",
-   "why": "FWA of the Month, вересень 2026"
+   "why": "FWA of the Month, вересень 2026",
+   "slice": 2026
   },
   {
    "name": "Oh là là Ride",
-   "why": "FWA of the Month, жовтень 2026"
+   "why": "FWA of the Month, жовтень 2026",
+   "slice": 2026
+  },
+  {
+   "name": "Kode Sports Club",
+   "why": "Awwwards Developer Site of the Year 2020 + Site of the Month, листопад 2020",
+   "slice": 2020
   }
+ ],
+ "unavailable": [
+  {
+   "name": "Apple AirPods Pro",
+   "why": "Awwwards Site of the Month, січень 2020",
+   "reason": "на тій самій адресі вже нова сторінка продукту",
+   "slice": 2020
+  },
+  {
+   "name": "Madeleine Dalla",
+   "why": "Awwwards Site of the Month, березень 2020",
+   "reason": "сайт блокує доступ (Cloudflare)",
+   "slice": 2020
+  },
+  {
+   "name": "Medal of Honor: Above & Beyond",
+   "why": "Awwwards Site of the Month, грудень 2020 + FWA of the Year 2020",
+   "reason": "сайт прибрали, адреса веде в магазин Meta",
+   "slice": 2020
+  },
+  {
+   "name": "Mammut Expedition Baikal",
+   "why": "Awwwards E-commerce Site of the Year 2020",
+   "reason": "сервер повертає помилку",
+   "slice": 2020
+  },
+  {
+   "name": "Dark: Official Netflix Guide",
+   "why": "Awwwards Site of the Year 2020 Users' Choice",
+   "reason": "домен не відповідає",
+   "slice": 2020
+  }
+ ],
+ "insights2020": [
+  "Звук на вході — норма 2020: 5 з 9 розібраних сайтів просять увімкнути звук або «натисни, щоб увійти». У 2026 таке є, але рідше (IVRESS, Primland, Unseen).",
+  "Easing 2020 — класичний набір Пеннера (easeOutCubic, easeInOutQuint, easeOutCirc) прямо з CSS-шпаргалок. У 2026 — власні жорсткі out-криві (expo/quint-out) і пружини через linear(). Наш --ease-out належить до класу 2026.",
+  "3D у 2020 — вітрина: продукт чи герой у центрі (Pioneer, Greta, CHILE20). У 2026 3D частіше вбудоване в історію й інтерфейс (Oryzo, Shader, IVRESS).",
+  "Типографіка майже не змінилась: гігантські імена (Ali Ali), стиснутий сериф (Synchronized), гротеск капсом + сериф (2°C Earth) — ті самі патерни, що ми взяли з 2026. Це стійкі прийоми, не мода.",
+  "Закріплений об'єкт уже був у 2020 (Greta) — ще один аргумент, що pinned-object довговічний.",
+  "Сайти живуть недовго: з 15 переможців 2020 року 5 уже недоступні або замінені. Тому скріншоти й записи референсів треба зберігати в себе."
  ]
 }
