@@ -43,7 +43,8 @@
       "unseen",
       "lando-norris",
       "renaissance",
-      "era-residence"
+      "era-residence",
+      "ivress"
     ],
     "params": "дисплей ls −0.02…−0.06em · лейбли UPPERCASE ls +0.05…+0.08em",
     "use_for": "Заголовки розділів кейсів («Impact», «Process»), About.",
@@ -62,7 +63,9 @@
       "exo-ape",
       "harry-atkins",
       "oryzo",
-      "santioni"
+      "santioni",
+      "ivress",
+      "shader"
     ],
     "params": "150–250px · lh 0.8–0.9",
     "use_for": "Hero кейсу: назва продукту (CHELSEA, FIBA) як графіка; ініціали ІХ на Home.",
@@ -150,7 +153,8 @@
     "examples": [
       "renaissance",
       "obys",
-      "era-residence"
+      "era-residence",
+      "ivress"
     ],
     "params": "nav-item-in 1s · stagger 40ms",
     "use_for": "Ліва колонка кейсу (вже маємо LeftRail — розвинути в індекс розділів).",
@@ -169,7 +173,8 @@
       "obys",
       "lama-lama",
       "harry-atkins",
-      "lando-norris"
+      "lando-norris",
+      "shader"
     ],
     "params": "expo-out 1000ms · CSS spring linear() 1600ms",
     "use_for": "Home: список кейсів (Chelsea, FIBA, Emagine, Jack…).",
@@ -189,7 +194,9 @@
       "why-zero",
       "santioni",
       "floema",
-      "lama-lama"
+      "lama-lama",
+      "primland",
+      "ivress"
     ],
     "params": "≤ 2–3s · раз за сесію",
     "use_for": "Короткий вхід на Home лише при першому візиті (наприклад, ініціали + сітка).",
@@ -282,6 +289,38 @@
     "decision": "maybe",
     "decided": "2026-11-26",
     "status": "parked",
+    "preset": null
+  },
+  {
+    "id": "gesture-hint",
+    "name": "Підказка жесту для інтерактиву",
+    "category": "micro",
+    "transfer": "css",
+    "examples": [
+      "primland"
+    ],
+    "params": "SVG-траєкторія + fade ~1s; ховати після першої дії",
+    "use_for": "Інтерактивні демо в кейсах: прототип, карта, 3D-модель, горизонтальні стрічки.",
+    "avoid_for": "Звичайний вертикальний скрол.",
+    "decision": null,
+    "decided": null,
+    "status": "undecided",
+    "preset": null
+  },
+  {
+    "id": "screen-frame",
+    "name": "Сайт у рамці екрана",
+    "category": "media",
+    "transfer": "css",
+    "examples": [
+      "shader"
+    ],
+    "params": "border-radius + inset shadow + text-shadow; без WebGL",
+    "use_for": "Можливо, кейси мобільних застосунків: контент у рамці пристрою.",
+    "avoid_for": "Коли рамка краде площу в контенту або сперечається з брендом кейсу.",
+    "decision": null,
+    "decided": null,
+    "status": "undecided",
     "preset": null
   }
 ]

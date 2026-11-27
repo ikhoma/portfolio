@@ -299,7 +299,7 @@
     }
    ],
    "year": 2026,
-   "why": "Awwwards Site of the Month, вересень 2026",
+   "why": "Awwwards Site of the Month, вересень 2026 + FWA of the Month, липень 2026",
    "look": "Вхід жестом: треба намалювати нуль; HUD-елементи з мерехтінням."
   },
   {
@@ -336,7 +336,7 @@
     }
    ],
    "year": 2026,
-   "why": "Awwwards Site of the Month, жовтень 2026 · студія Active Theory",
+   "why": "Awwwards Site of the Month, жовтень 2026 + FWA of the Month, серпень 2026 · студія Active Theory",
    "look": "Гравюрний лоадер і розділений заголовок на age-gate. Далі age-gate не проходили."
   },
   {
@@ -390,7 +390,7 @@
     }
    ],
    "year": 2026,
-   "why": "Awwwards Site of the Month, квітень 2026 · студія Lusion",
+   "why": "Awwwards Site of the Month, квітень 2026 + FWA of the Month, березень 2026 · студія Lusion",
    "look": "Закріплений продукт у центрі, поки довкола змінюється історія; слова проявляються з розмиття."
   },
   {
@@ -459,7 +459,7 @@
     }
    ],
    "year": 2026,
-   "why": "Awwwards Site of the Month, лютий 2026",
+   "why": "Awwwards Site of the Month, лютий 2026 + FWA of the Month, лютий 2026",
    "look": "Липкий зміст із римськими номерами, обкладинки розділів, пружний hover, малювання ліній рамки."
   },
   {
@@ -907,22 +907,207 @@
    "year": 2026,
    "why": "Godly / recent.design, розділ Websites",
    "look": "Поле фотографій навколо імені, курсор-хрестик. Портфоліо фотографа."
+  },
+  {
+   "id": "primland",
+   "name": "Explore Primland",
+   "url": "https://explore.ownprimland.com/",
+   "source": "FWA of the Month Jan 2026",
+   "studio": "Outpost",
+   "stack": [
+    "Three.js (canvas)",
+    "Lenis"
+   ],
+   "type": "hero: розріджені капітелі з широким трекінгом · body Centra 18/24",
+   "easings": [
+    "cubic-bezier(0.19, 1, 0.22, 1) — expo-out",
+    "cubic-bezier(0.23, 1, 0.32, 1) — quint-out",
+    "cubic-bezier(0.625, 0.05, 0, 1) — різкий in-out"
+   ],
+   "durations": [
+    "150–850ms на UI",
+    "1s",
+    "4s (хмари)"
+   ],
+   "shots": [
+    "shots/primland-1.jpg",
+    "shots/primland-2.jpg"
+   ],
+   "moments": [
+    {
+     "cat": "loader",
+     "name": "Вхід зі вибором звуку",
+     "what": "Перший екран — заголовок над аерокартою; дві дії: «Explore the map» або «Start without audio».",
+     "params": "кнопки з тонкою рамкою; fade 0.6–0.85s",
+     "transfer": "css"
+    },
+    {
+     "cat": "media",
+     "name": "Аерокарта з хмарами, що пливуть",
+     "what": "Hero — 3D-ландшафт маєтку зверху, по краях повільно дрейфують хмари; на старт камера опускається до карти.",
+     "params": "WebGL; хмари ~4s цикл",
+     "transfer": "webgl"
+    },
+    {
+     "cat": "micro",
+     "name": "Підказки жестів",
+     "what": "Після входу: «Drag to move», «Scroll to zoom» з анімованою рукою і пунктирною траєкторією; зникають після першої дії.",
+     "params": "SVG-лінія + fade; ~1s",
+     "transfer": "css"
+    },
+    {
+     "cat": "text",
+     "name": "Розріджені капітелі",
+     "what": "Заголовок «THE BLUE RIDGE MOUNTAINS» великими літерами з широким трекінгом, над ним дрібний надрядок.",
+     "params": "tracking ≈ +0.2em",
+     "transfer": "css"
+    }
+   ],
+   "year": 2026,
+   "why": "FWA of the Month, січень 2026 · студія Outpost",
+   "look": "3D-карта маєтку як головний інтерфейс: вхід зі вибором звуку, підказки жестів «drag / scroll», розріджені капітелі."
+  },
+  {
+   "id": "shader",
+   "name": "Shader Development Studio",
+   "url": "https://www.shader.se/",
+   "source": "FWA of the Month Apr 2026",
+   "studio": "Shader (Швеція) · Andreas Antonsson",
+   "stack": [
+    "WebGL (canvas)",
+    "Lenis"
+   ],
+   "type": "STIX Two Text, серифний заголовок зі світінням",
+   "easings": [
+    "cubic-bezier(0.16, 1, 0.3, 1) — expo-out",
+    "cubic-bezier(0.4, 0, 0.2, 1) — standard",
+    "cubic-bezier(0.7, 0, 0.84, 0) — expo-in"
+   ],
+   "durations": [
+    "150–450ms",
+    "900ms"
+   ],
+   "shots": [
+    "shots/shader-1.jpg",
+    "shots/shader-2.jpg",
+    "shots/shader-3.jpg"
+   ],
+   "moments": [
+    {
+     "cat": "scroll-linked",
+     "name": "Політ у екран ретро-комп'ютера",
+     "what": "Hero — 3D-комп'ютер; на скрол камера «пірнає» в його екран і далі сайт ніби всередині монітора.",
+     "params": "WebGL, scrub від скролу",
+     "transfer": "webgl"
+    },
+    {
+     "cat": "carousel",
+     "name": "Роботи на вигнутій кіноплівці",
+     "what": "Карусель проєктів — стрічка плівки, вигнута по колу; активний кадр по центру, назва зверху, стрілки й точки.",
+     "params": "WebGL; перехід ~0.9s expo-out",
+     "transfer": "webgl"
+    },
+    {
+     "cat": "micro",
+     "name": "Увесь сайт як CRT-екран",
+     "what": "Сторінка в рамці зі скругленими кутами, віньєткою й легким світінням тексту — ніби старий монітор.",
+     "params": "border-radius + inset shadow + text-shadow glow",
+     "transfer": "css"
+    },
+    {
+     "cat": "text",
+     "name": "Гігантський заголовок розділу поверх 3D",
+     "what": "«About Us» великим серифом зі світінням поверх сцени офісу з кубиклами.",
+     "params": "serif ~180px, bloom",
+     "transfer": "css"
+    }
+   ],
+   "year": 2026,
+   "why": "FWA of the Month, квітень 2026 · сайт студії",
+   "look": "Політ у екран ретро-комп'ютера на скрол, роботи на вигнутій кіноплівці, увесь сайт як CRT-монітор."
+  },
+  {
+   "id": "ivress",
+   "name": "IVRESS — Spin a Tale",
+   "url": "https://brand.ivress.co.jp/en/",
+   "source": "FWA of the Month May 2026",
+   "studio": "Laugh Mind · Utsubo",
+   "stack": [
+    "WebGL (canvas)",
+    "Lenis"
+   ],
+   "type": "Basilia Compress D 322/258px (lh 0.8) + Josefin Sans 24/43 ls +1.2px",
+   "easings": [
+    "cubic-bezier(.25, 1, .5, 1) — quart-out",
+    "cubic-bezier(0.19, 1, 0.22, 1) — expo-out"
+   ],
+   "durations": [
+    "300–800ms",
+    "2–6s (атмосфера)"
+   ],
+   "shots": [
+    "shots/ivress-1.jpg",
+    "shots/ivress-2.jpg",
+    "shots/ivress-3.jpg"
+   ],
+   "moments": [
+    {
+     "cat": "loader",
+     "name": "Персонаж-лоадер з відсотками",
+     "what": "Темний екран, маленька істота-маскот і лічильник 0–100%; потім одна фраза про світ історії.",
+     "params": "~3s; вузький кегль цифр",
+     "transfer": "css"
+    },
+    {
+     "cat": "loader",
+     "name": "Click to start + звук",
+     "what": "Кругла кнопка «Click to start» по центру, перемикач SOUND і JP/EN у куті.",
+     "params": "—",
+     "transfer": "css"
+    },
+    {
+     "cat": "text",
+     "name": "Гігантський стиснутий сериф + розріджений гротеск",
+     "what": "«IVRESS» стиснутим серифом на пів екрана, поруч дрібні капітелі Josefin Sans з широким трекінгом.",
+     "params": "322px · lh 0.8 · ls +1.2px на гротеску",
+     "transfer": "css"
+    },
+    {
+     "cat": "scroll-linked",
+     "name": "Глави з лічильником 01/09",
+     "what": "Історія з 9 глав; назва глави вгорі ліворуч (PROLOGUE, ENCOUNTER…), великий номер 01/09 унизу; скрол перемикає главу.",
+     "params": "scroll-gated; 0.8s",
+     "transfer": "css+js"
+    },
+    {
+     "cat": "media",
+     "name": "3D-ілюстрація для кожної глави",
+     "what": "Кожна глава — своя сцена з персонажами, світлом і туманом; переходи через спалах світла.",
+     "params": "WebGL",
+     "transfer": "webgl"
+    }
+   ],
+   "year": 2026,
+   "why": "FWA of the Month, травень 2026 · студії Laugh Mind і Utsubo",
+   "look": "Історія з 9 глав з лічильником 01/09, гігантський стиснутий сериф + розріджений гротеск, лоадер-маскот."
   }
  ],
  "meta": {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "scope": "Тестовий зріз 2026",
   "sources": [
    "Awwwards Sites of the Month 2026 (січень–жовтень)",
+   "The FWA — FWA of the Month 2026 (січень–жовтень), за архівом legacy.thefwa.com",
    "Awwwards Site of the Year 2025 (Lando Norris)",
    "Студії: Locomotive, Obys, Exo Ape, Unseen (Immersive Garden — через GQ & AP)",
    "Godly → тепер Recent (recent.design): 2 сайти з розділу Websites"
   ],
   "notCovered": [
-   "The FWA — не встиг у тесті",
    "Malvah, сайт Immersive Garden — наступна ітерація",
    "Santioni — далі age-gate не проходив",
-   "Bruno Simon — 3D-гра, без детального розбору"
+   "Bruno Simon — 3D-гра, без детального розбору",
+   "FWA of the Year 2026 — не оголошено: FWA перезапустилась у листопаді 2026, архів закінчується жовтнем",
+   "FWA-ігри (Lacoste Ace Breaker, Awards Racing, Oh là là Ride) — свідомо пропущені"
   ]
  },
  "patterns": [
@@ -966,7 +1151,8 @@
     "unseen",
     "lando-norris",
     "renaissance",
-    "era-residence"
+    "era-residence",
+    "ivress"
    ],
    "forUs": "Заголовки розділів кейсів («Impact», «Process»), About.",
    "avoid": "Більше двох гарнітур на екрані."
@@ -982,7 +1168,9 @@
     "exo-ape",
     "harry-atkins",
     "oryzo",
-    "santioni"
+    "santioni",
+    "ivress",
+    "shader"
    ],
    "forUs": "Hero кейсу: назва продукту (CHELSEA, FIBA) як графіка; ініціали ІХ на Home.",
    "avoid": "Мобільний без окремої адаптації розміру."
@@ -1055,7 +1243,8 @@
    "examples": [
     "renaissance",
     "obys",
-    "era-residence"
+    "era-residence",
+    "ivress"
    ],
    "forUs": "Ліва колонка кейсу (вже маємо LeftRail — розвинути в індекс розділів).",
    "avoid": "Мобільний — ховати в компактний прогрес."
@@ -1071,7 +1260,8 @@
     "obys",
     "lama-lama",
     "harry-atkins",
-    "lando-norris"
+    "lando-norris",
+    "shader"
    ],
    "forUs": "Home: список кейсів (Chelsea, FIBA, Emagine, Jack…).",
    "avoid": "Коли робіт мало (до 4) — лінза й віяло виглядають порожньо."
@@ -1088,7 +1278,9 @@
     "why-zero",
     "santioni",
     "floema",
-    "lama-lama"
+    "lama-lama",
+    "primland",
+    "ivress"
    ],
    "forUs": "Короткий вхід на Home лише при першому візиті (наприклад, ініціали + сітка).",
    "avoid": "Кожен перехід між сторінками; кейси."
@@ -1162,6 +1354,32 @@
    ],
    "forUs": "Глобальна навігація портфоліо замість фіксованої лівої колонки на мобільному.",
    "avoid": "—"
+  },
+  {
+   "id": "gesture-hint",
+   "cat": "micro",
+   "name": "Підказка жесту для інтерактиву",
+   "what": "Коли сторінка керується незвично (тягни, скроль для зуму), коротка анімована підказка з рукою й траєкторією показує жест і зникає після першої дії.",
+   "params": "SVG-лінія + fade ~1s; ховати після першої взаємодії",
+   "transfer": "css",
+   "examples": [
+    "primland"
+   ],
+   "forUs": "Інтерактивні демо в кейсах (прототип, карта, 3D-модель), горизонтальні стрічки.",
+   "avoid": "Звичайний вертикальний скрол — підказка тут зайва."
+  },
+  {
+   "id": "screen-frame",
+   "cat": "media",
+   "name": "Сайт у рамці екрана",
+   "what": "Уся сторінка вписана в рамку зі скругленими кутами, віньєткою й світінням — ніби дивишся в монітор або пристрій.",
+   "params": "border-radius + inset shadow + text-shadow; без WebGL",
+   "transfer": "css",
+   "examples": [
+    "shader"
+   ],
+   "forUs": "Можливо, кейси мобільних застосунків: контент у «рамці» пристрою.",
+   "avoid": "Коли рамка краде площу в контенту або сперечається з брендом кейсу."
   }
  ],
  "easings": [
@@ -1214,6 +1432,21 @@
    "curve": "linear(0, 0.1294 2%, … 1 100%)",
    "name": "CSS spring",
    "where": "Obys (1600ms)"
+  },
+  {
+   "curve": "cubic-bezier(0.16, 1, 0.3, 1)",
+   "name": "expo-out",
+   "where": "Shader"
+  },
+  {
+   "curve": "cubic-bezier(.25, 1, .5, 1)",
+   "name": "quart-out",
+   "where": "IVRESS"
+  },
+  {
+   "curve": "cubic-bezier(0.625, 0.05, 0, 1)",
+   "name": "різкий in-out",
+   "where": "Explore Primland"
   }
  ],
  "insights": [
@@ -1258,6 +1491,23 @@
    "why": "Топова студія · навчальний сайт",
    "look": "Палітри з фотографій: основний тон + 3 супутні. Для модуля color/ (відкладено).",
    "topic": "Колір"
+  }
+ ],
+ "skipped": [
+  {
+   "name": "Lacoste Ace Breaker",
+   "why": "FWA of the Month, червень 2026 · студія Merci-Michel",
+   "look": "Браузерна гра (арканоїд) — пропустили: ігри не наш формат."
+  },
+  {
+   "name": "Awards Racing",
+   "why": "FWA of the Month, вересень 2026 · студія Ecofuture",
+   "look": "Гонка на three.js — пропустили як гру."
+  },
+  {
+   "name": "Oh là là Ride",
+   "why": "FWA of the Month, жовтень 2026 · студія The Officin",
+   "look": "Мультиплеєрна поїздка Парижем — пропустили як гру."
   }
  ]
 }
