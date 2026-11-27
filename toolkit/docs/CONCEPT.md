@@ -106,7 +106,7 @@ Every module aims for the same four parts, so working in any of them feels the s
   entry, follower cursor and image lens.
 - **References:** 2026 slice (19 sites: Awwwards and FWA sites of the month, Godly, and studios such
   as Obys, Locomotive, Exo Ape, Lama Lama), 18 patterns with Ivan's decisions; Ivan's Telegram channel
-  of saved animations as the next source. No FWA of the Year 2026: FWA relaunched in Nov 2026.
+  of saved animations as the next source. FWA relaunched on 3 Nov 2026 without Site of the Day / Month (winners now enter one "canon" at an 80 % jury yes); FWA of the Year 2026 is voted in January 2027 — add it then. Future FWA slices take canon winners.
   Game-like sites are skipped and only counted (4 in 2026).
 - **Open:**
   - batch 3: pinned-object (pinned iPhone, screens change while features scroll); floating-nav parked;
