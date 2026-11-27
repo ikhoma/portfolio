@@ -48,7 +48,10 @@
      "params": "2000ms linear loop, transform+opacity",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Awwwards Site of the Month, травень 2026 · студія Bürocratik",
+   "look": "Стек повноекранних секцій, які наїжджають одна на одну; хмара зображень навколо заголовка на вході."
   },
   {
    "id": "son-daven",
@@ -114,7 +117,10 @@
      "params": "x, 5s linear, repeat",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Awwwards Site of the Month, червень 2026 · студія The First The Last",
+   "look": "Інтро-«жалюзі», clip-path reveal, паралакс фото, безкінечна стрічка."
   },
   {
    "id": "lama-lama",
@@ -173,7 +179,10 @@
      "params": "—",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Awwwards Site of the Month, липень 2026 · сайт студії",
+   "look": "Текст по рядках з маскою, scramble-лейбли, рядки проєктів зі стрічкою прев'ю, плаваюча навігація."
   },
   {
    "id": "era-residence",
@@ -247,7 +256,10 @@
      "params": "scrub",
      "transfer": "css+js"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Awwwards Site of the Month, серпень 2026 · студія The First The Last",
+   "look": "Горизонтальний скрол, вирізані об'єкти з паралаксом, тонкі лінії, що малюються, лічильник прогресу."
   },
   {
    "id": "why-zero",
@@ -285,7 +297,10 @@
      "params": "9s shimmer linear, 700ms spin",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Awwwards Site of the Month, вересень 2026",
+   "look": "Вхід жестом: треба намалювати нуль; HUD-елементи з мерехтінням."
   },
   {
    "id": "santioni",
@@ -319,7 +334,10 @@
      "params": "композиція",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Awwwards Site of the Month, жовтень 2026 · студія Active Theory",
+   "look": "Гравюрний лоадер і розділений заголовок на age-gate. Далі age-gate не проходили."
   },
   {
    "id": "oryzo",
@@ -370,7 +388,10 @@
      "params": "—",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Awwwards Site of the Month, квітень 2026 · студія Lusion",
+   "look": "Закріплений продукт у центрі, поки довкола змінюється історія; слова проявляються з розмиття."
   },
   {
    "id": "renaissance",
@@ -436,7 +457,10 @@
      "params": "600ms, step 75ms",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Awwwards Site of the Month, лютий 2026",
+   "look": "Липкий зміст із римськими номерами, обкладинки розділів, пружний hover, малювання ліній рамки."
   },
   {
    "id": "gq-ap",
@@ -477,7 +501,10 @@
      "params": "audio",
      "transfer": "css+js"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Awwwards Site of the Month, березень 2026 · студія Immersive Garden",
+   "look": "Історія в 3D: з темряви збирається каркасна лабораторія, тонкий гігантський заголовок поверх сцени, звук."
   },
   {
    "id": "bruno",
@@ -501,7 +528,10 @@
      "params": "Three.js, фізика",
      "transfer": "webgl"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Awwwards Site of the Month, січень 2026",
+   "look": "Портфоліо як 3D-гра: їдеш машинкою по світу з проєктами. Дивитись як ідею подачі, не як пресет."
   },
   {
    "id": "locomotive",
@@ -556,7 +586,10 @@
      "params": "—",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2024,
+   "why": "Топова студія · Awwwards Agency of the Year 2024",
+   "look": "Піксельна мозаїка поверх фото, текст із вбудованими піктограмами, спокійний швейцарський футер."
   },
   {
    "id": "obys",
@@ -618,7 +651,10 @@
      "params": "linear(0, 0.1294 2%, … 1 100%), 1600ms",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2023,
+   "why": "Топова студія · Awwwards Studio of the Year 2023",
+   "look": "Вертикальна «лінза» проєктів, список-індекс, перемикач Vertical / Horizontal / Grid, пружний easing на CSS."
   },
   {
    "id": "exo-ape",
@@ -672,7 +708,10 @@
      "params": "video/3D render",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": null,
+   "why": "Топова студія (без нагороди в цьому зрізі)",
+   "look": "«Play Reel», де відео розсуває слова; гігантське слово за краєм екрана; футер-історія з 3D-об'єктом."
   },
   {
    "id": "lando-norris",
@@ -734,7 +773,10 @@
      "params": "Rive",
      "transfer": "css+js"
     }
-   ]
+   ],
+   "year": 2025,
+   "why": "Awwwards Site of the Year 2025 · студія OFF+BRAND. · спорт, як твої кейси",
+   "look": "Обличчя ↔ шолом під курсором, колаж із паралаксом, кольорові переходи між розділами."
   },
   {
    "id": "unseen",
@@ -776,7 +818,10 @@
      "params": "—",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": null,
+   "why": "Топова студія (без нагороди в цьому зрізі)",
+   "look": "Вхід із вибором звуку, сюрреалістична 3D-сцена в hero, заголовок курсив + гротеск."
   },
   {
    "id": "harry-atkins",
@@ -822,7 +867,10 @@
      "params": "—",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Godly / recent.design, розділ Websites",
+   "look": "Гігантські ініціали, що стискаються на скролі; один кегль на весь сайт."
   },
   {
    "id": "gregor-collienne",
@@ -855,7 +903,10 @@
      "params": "—",
      "transfer": "css"
     }
-   ]
+   ],
+   "year": 2026,
+   "why": "Godly / recent.design, розділ Websites",
+   "look": "Поле фотографій навколо імені, курсор-хрестик. Портфоліо фотографа."
   }
  ],
  "meta": {
@@ -1171,5 +1222,42 @@
   "Одна студія — одна «рука»: Son Daven і ERA (обидва The First The Last) мають ідентичні easing. Набір токенів = впізнаваний стиль.",
   "Типографіка: дисплей з від'ємним трекінгом (−0.02…−0.06em) і міжряддям < 1; дрібні лейбли UPPERCASE з розрідженням +0.05…+0.08em. Пари «антиква/рукописний + гротеск» — у 4 з 17 сайтів.",
   "Стек: GSAP + Lenis — стандарт (Webflow-студії тримають GSAP глобально, тому його параметри видно). Половина SOTM 2026 — WebGL-досвіди; для портфоліо переносимо ідеї, а не 3D."
+ ],
+ "refs": [
+  {
+   "name": "Obys — Grids",
+   "url": "https://grids.obys.agency/",
+   "why": "Топова студія · навчальний сайт про сітки",
+   "look": "Типи сіток (колонкові, модульні, базова лінія) — з них пресети оверлею.",
+   "topic": "Сітки"
+  },
+  {
+   "name": "BONT Academy",
+   "url": "https://www.bont.academy/",
+   "why": "Студія BONT, від якої ти вперше почув про golden grid",
+   "look": "Канон Ван де Граафа; твоя реконструкція лягла в шар «Canon» оверлею.",
+   "topic": "Сітки"
+  },
+  {
+   "name": "Duosan Miao — Satellite SOS",
+   "url": "https://dousanmiao.com/#/satellite-sos",
+   "why": "Твій референс",
+   "look": "Як 3- і 4-колонкові блоки лягають на 12-колонкову сітку.",
+   "topic": "Сітки"
+  },
+  {
+   "name": "Obys — Typography Principles",
+   "url": "https://typographyprinciples.obys.agency/",
+   "why": "Топова студія · навчальний сайт",
+   "look": "Правила з цифрами: line-height і трекінг, пари шрифтів, вирівнювання, 2–4 кеглі. Основа модуля type/.",
+   "topic": "Типографіка"
+  },
+  {
+   "name": "Obys — Colors Combinations",
+   "url": "https://colors.combinations.obys.agency/",
+   "why": "Топова студія · навчальний сайт",
+   "look": "Палітри з фотографій: основний тон + 3 супутні. Для модуля color/ (відкладено).",
+   "topic": "Колір"
+  }
  ]
 }
