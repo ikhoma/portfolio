@@ -507,33 +507,6 @@
    "look": "Історія в 3D: з темряви збирається каркасна лабораторія, тонкий гігантський заголовок поверх сцени, звук."
   },
   {
-   "id": "bruno",
-   "name": "Bruno's Portfolio",
-   "url": "https://bruno-simon.com/",
-   "source": "Awwwards SOTM Jan 2026",
-   "studio": "Bruno Simon",
-   "stack": [
-    "Three.js / WebGL (гра)"
-   ],
-   "type": "—",
-   "easings": [],
-   "durations": [],
-   "shots": [],
-   "note": "Не розбирав детально: це 3D-гра (керуєш машинкою між проєктами), технічно непереносна для наших задач.",
-   "moments": [
-    {
-     "cat": "loader",
-     "name": "Портфоліо як гра",
-     "what": "Навігація між проєктами — їзда машинкою по 3D-світу. Сильна ідея-подача, але повністю WebGL.",
-     "params": "Three.js, фізика",
-     "transfer": "webgl"
-    }
-   ],
-   "year": 2026,
-   "why": "Awwwards Site of the Month, січень 2026",
-   "look": "Портфоліо як 3D-гра: їдеш машинкою по світу з проєктами. Дивитись як ідею подачі, не як пресет."
-  },
-  {
    "id": "locomotive",
    "name": "Locomotive",
    "url": "https://locomotive.ca/en",
@@ -1105,9 +1078,8 @@
   "notCovered": [
    "Malvah, сайт Immersive Garden — наступна ітерація",
    "Santioni — далі age-gate не проходив",
-   "Bruno Simon — 3D-гра, без детального розбору",
    "FWA of the Year 2026 — не оголошено: FWA перезапустилась у листопаді 2026, архів закінчується жовтнем",
-   "FWA-ігри (Lacoste Ace Breaker, Awards Racing, Oh là là Ride) — свідомо пропущені"
+   "Сайти-ігри — свідомо пропущені, лише фіксуємо кількість (4 за 2026)"
   ]
  },
  "patterns": [
@@ -1495,19 +1467,20 @@
  ],
  "skipped": [
   {
+   "name": "Bruno's Portfolio",
+   "why": "Awwwards Site of the Month, січень 2026"
+  },
+  {
    "name": "Lacoste Ace Breaker",
-   "why": "FWA of the Month, червень 2026 · студія Merci-Michel",
-   "look": "Браузерна гра (арканоїд) — пропустили: ігри не наш формат."
+   "why": "FWA of the Month, червень 2026"
   },
   {
    "name": "Awards Racing",
-   "why": "FWA of the Month, вересень 2026 · студія Ecofuture",
-   "look": "Гонка на three.js — пропустили як гру."
+   "why": "FWA of the Month, вересень 2026"
   },
   {
    "name": "Oh là là Ride",
-   "why": "FWA of the Month, жовтень 2026 · студія The Officin",
-   "look": "Мультиплеєрна поїздка Парижем — пропустили як гру."
+   "why": "FWA of the Month, жовтень 2026"
   }
  ]
 }

@@ -104,9 +104,10 @@ Every module aims for the same four parts, so working in any of them feels the s
   fade-up, clip, blinds, draw, parallax, scramble, marquee, spring hover; batch 2
   composition: section stack, index nav, project browser (rows / lens), once-per-session
   entry, follower cursor and image lens.
-- **References:** 2026 slice (20 sites: Awwwards and FWA sites of the month, Godly, and studios such
+- **References:** 2026 slice (19 sites: Awwwards and FWA sites of the month, Godly, and studios such
   as Obys, Locomotive, Exo Ape, Lama Lama), 18 patterns with Ivan's decisions; Ivan's Telegram channel
   of saved animations as the next source. No FWA of the Year 2026: FWA relaunched in Nov 2026.
+  Game-like sites are skipped and only counted (4 in 2026).
 - **Open:**
   - batch 3: pinned-object (pinned iPhone, screens change while features scroll); floating-nav parked;
   - presets not yet wired into real portfolio pages;
