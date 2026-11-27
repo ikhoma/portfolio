@@ -120,14 +120,22 @@ function initCursor() {
   document.body.append(cursor);
   let x = -100, y = -100, cx = x, cy = y;
   const follow = reduced() ? 1 : 0.22;
+  // Label and lens state come from whatever is under the pointer. Re-check on scroll too:
+  // the page moves under a still pointer and pointermove does not fire.
+  const sync = () => {
+    const under = document.elementFromPoint(x, y);
+    const t = under?.closest('[data-cursor]') as HTMLElement | null;
+    const label = t?.dataset.cursor ?? '';
+    cursor!.classList.toggle('is-label', !!label);
+    cursor!.classList.toggle('is-lens', !!under?.closest('[data-lens]'));
+    cursor!.firstElementChild!.textContent = label;
+  };
   addEventListener('pointermove', (e) => {
     x = e.clientX; y = e.clientY;
     cursor!.classList.remove('is-hidden');
-    const t = (e.target as Element).closest?.('[data-cursor]') as HTMLElement | null;
-    const label = t?.dataset.cursor ?? '';
-    cursor!.classList.toggle('is-label', !!label);
-    cursor!.firstElementChild!.textContent = label;
+    sync();
   });
+  addEventListener('scroll', () => { if (x >= 0) sync(); }, { passive: true });
   document.addEventListener('pointerleave', () => cursor!.classList.add('is-hidden'));
   const loop = () => {
     cx += (x - cx) * follow; cy += (y - cy) * follow;

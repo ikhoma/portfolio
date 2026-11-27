@@ -128,11 +128,16 @@
 .tk-cursor.is-hidden { opacity: 0; }
 @media (hover: none), (pointer: coarse) { .tk-cursor { display: none; } }
 
+/* The circle follows the pointer instantly; only its size springs open and closed.
+   Animating clip-path itself would make the position trail 600 ms behind the cursor. */
+@property --tk-lens-size { syntax: '<length>'; inherits: false; initial-value: 0px; }
 [data-lens] { position: relative; overflow: hidden; }
 [data-lens] > .tk-lens__reveal {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  clip-path: circle(0 at var(--x, 50%) var(--y, 50%));
-  transition: clip-path 600ms var(--ease-spring);
+  --tk-lens-size: 0px;
+  clip-path: circle(var(--tk-lens-size) at var(--x, 50%) var(--y, 50%));
+  transition: --tk-lens-size 600ms var(--ease-spring);
 }
-[data-lens]:hover > .tk-lens__reveal { clip-path: circle(var(--tk-lens-r, 140px) at var(--x, 50%) var(--y, 50%)); transition: clip-path 600ms var(--ease-spring), 0s; }
+[data-lens]:hover > .tk-lens__reveal { --tk-lens-size: var(--tk-lens-r, 160px); }
+.tk-cursor.is-lens { opacity: 0; }
 @media (hover: none) { [data-lens] > .tk-lens__reveal { display: none; } }
