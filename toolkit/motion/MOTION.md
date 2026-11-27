@@ -143,7 +143,8 @@ Cursor and lens are off on touch screens. Colours come from `--tk-index-text`,
 ### Decisions & backlog — `patterns.json`
 Every pattern from the slices with Ivan's decision (`take` / `maybe` / undecided),
 status (`preset`, `parked`, `undecided`) and where it is implemented.
-Still open: mixed-type, giant-type, pinned-object (undecided), floating-nav (parked).
+Taken 2026-11-27 and planned: mixed-type and giant-type go to the `type/` module (Ivan favours a serif +
+neo-grotesk pair; giant type used occasionally), pinned-object is motion batch 3. Parked: floating-nav.
 
 ## 6. Already in the portfolio (seeded in the catalog)
 

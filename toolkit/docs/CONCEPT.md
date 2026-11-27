@@ -108,7 +108,7 @@ Every module aims for the same four parts, so working in any of them feels the s
   Locomotive, Exo Ape, Lama Lama), 16 patterns with Ivan's decisions; Ivan's Telegram channel
   of saved animations as the next source.
 - **Open:**
-  - undecided patterns: mixed-type, giant-type, pinned-object; floating-nav parked;
+  - batch 3: pinned-object (pinned iPhone, screens change while features scroll); floating-nav parked;
   - presets not yet wired into real portfolio pages;
   - slices for 2024–2025 and FWA; Telegram export ingestion;
   - "motion character" sets (calm / confident / bold) that retune all presets at once (proposal).
@@ -121,6 +121,8 @@ Every module aims for the same four parts, so working in any of them feels the s
   - pairs: contrasting types, similar proportions, matching details;
   - left alignment by default, right for balance, centre rarely; compositional mixed alignment as an accent;
   - 2–4 sizes per project with large steps (e.g. 90 / 60 / 30 / 14).
+- **Taken from the motion slice (2026-11-27):** mixed-type — Ivan favours pairing a serif
+  (antiqua) with a neo-grotesk; giant type as composition, used occasionally.
 - **Planned:** type tokens (scale, line-heights, tracking per role), baseline overlay in the
   grid tool, a type check in the dev panel (how many sizes are in use, steps that are too
   close, line-height and tracking outside the ranges), a slice of type references.

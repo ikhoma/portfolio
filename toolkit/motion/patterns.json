@@ -48,10 +48,10 @@
     "params": "дисплей ls −0.02…−0.06em · лейбли UPPERCASE ls +0.05…+0.08em",
     "use_for": "Заголовки розділів кейсів («Impact», «Process»), About.",
     "avoid_for": "Більше двох гарнітур на екрані.",
-    "decision": null,
-    "decided": null,
-    "status": "undecided",
-    "preset": null
+    "decision": "take",
+    "decided": "2026-11-27",
+    "status": "planned",
+    "preset": "type/ — font-pair presets; Ivan favours a serif (antiqua) + neo-grotesk pair"
   },
   {
     "id": "giant-type",
@@ -67,10 +67,10 @@
     "params": "150–250px · lh 0.8–0.9",
     "use_for": "Hero кейсу: назва продукту (CHELSEA, FIBA) як графіка; ініціали ІХ на Home.",
     "avoid_for": "Мобільний без окремої адаптації розміру.",
-    "decision": null,
-    "decided": null,
-    "status": "undecided",
-    "preset": null
+    "decision": "take",
+    "decided": "2026-11-27",
+    "status": "planned",
+    "preset": "type/ — display scale step; used occasionally (Ivan already has giant type in a footer)"
   },
   {
     "id": "clip-reveal",
@@ -120,10 +120,10 @@
     "params": "sticky + scrub; WebGL не обов'язковий — підходить відео/секвенція зображень",
     "use_for": "Кейси мобільних застосунків: закріплений iPhone з екранами Chelsea/FIBA, поки збоку змінюються фічі.",
     "avoid_for": "Коли історія не має одного центрального об'єкта.",
-    "decision": null,
-    "decided": null,
-    "status": "undecided",
-    "preset": null
+    "decision": "take",
+    "decided": "2026-11-27",
+    "status": "planned",
+    "preset": "motion batch 3 — pinned device (iPhone) with screens changing while features scroll"
   },
   {
     "id": "section-stack",
