@@ -10,6 +10,7 @@ Two audiences, two formats:
 |---|---|---|
 | Claude (and any coding agent) | Markdown rules, read before building UI | `*/GRID.md`, `*/MOTION.md`, this README |
 | People (Ivan, clients, team) | Visual HTML guide | `docs/index.html` |
+| Everyone | Product decisions: what gets built, when, why | `docs/decisions/` |
 
 ## Principles
 
@@ -38,6 +39,7 @@ Two audiences, two formats:
 | `spacing/` | ⏳ | 4/8 spacing scale, inspector for off-scale values |
 | `quality/` | ⏳ | Contrast / a11y checks, Playwright screenshot tests |
 | `apps/` | ⏳ | Same tokens exported to Swift; SwiftUI debug grid overlay |
+| `color/` | 💤 last | Itten's contrasts and harmonies, role tokens, contrast checks, palette tool — deferred, see [decision 001](docs/decisions/001-color-module-last.md) |
 
 ## Layout
 
