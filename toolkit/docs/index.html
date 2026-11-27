@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toolkit — Grid & Motion</title>
+<style>
+  :root {
+    --bg: #101010; --panel: #1a1a1a; --line: #2a2a2a; --text: #ececec; --muted: #8f8f8a;
+    --accent: #d2ff50; --col: rgba(255, 59, 48, .14); --col-line: rgba(255, 59, 48, .55);
+    --cols: 12; --gutter: 20px; --pad: 80px;
+    --dur-fast: 200ms; --dur-base: 320ms; --dur-slow: 560ms; --dur-slower: 800ms;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 Manrope, ui-sans-serif, system-ui, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1600px; margin: 0 auto; padding: 0 var(--pad); }
+  .grid { display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); gap: var(--gutter); }
+  header { padding: 96px 0 48px; border-bottom: 1px solid var(--line); }
+  header h1 { grid-column: 1 / span 8; font-size: clamp(48px, 7vw, 108px); line-height: 1; letter-spacing: -.04em; margin: 0; font-weight: 500; }
+  header p { grid-column: 9 / span 4; align-self: end; color: var(--muted); margin: 0; }
+  nav.toc { position: sticky; top: 0; z-index: 5; background: rgba(16,16,16,.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav.toc .wrap { display: flex; gap: 24px; padding-top: 14px; padding-bottom: 14px; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; }
+  nav.toc a:hover { color: var(--text); }
+  section { padding: 96px 0; border-bottom: 1px solid var(--line); }
+  .label { grid-column: 1 / span 2; color: var(--muted); font-size: 14px; }
+  .body { grid-column: 3 / span 8; }
+  .wide { grid-column: 1 / -1; }
+  h2 { font-size: 56px; line-height: 1.05; letter-spacing: -.03em; margin: 0 0 24px; font-weight: 500; }
+  h3 { font-size: 20px; margin: 48px 0 12px; font-weight: 600; }
+  p { margin: 0 0 16px; max-width: 68ch; }
+  .muted { color: var(--muted); }
+  code { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--panel); padding: 2px 6px; border-radius: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 16px 0 8px; }
+  th, td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 500; }
+  .tag { display: inline-block; border: 1px solid var(--line); border-radius: 99px; padding: 2px 10px; font-size: 13px; color: var(--muted); }
+  .do, .dont { padding: 20px; border-radius: 16px; background: var(--panel); }
+  .do { box-shadow: inset 0 0 0 1px rgba(210,255,80,.35); }
+  .dont { box-shadow: inset 0 0 0 1px rgba(255,59,48,.35); }
+  .do b { color: var(--accent); } .dont b { color: #ff6b5f; }
+
+  /* Live grid demo */
+  .demo { position: relative; padding: 24px 0; }
+  .demo .cols { position: absolute; inset: 0; pointer-events: none; }
+  .demo .cols span { background: var(--col); box-shadow: inset 1px 0 var(--col-line), inset -1px 0 var(--col-line); }
+  .demo .rowset { position: relative; display: grid; gap: 12px; }
+  .demo .rowset > .grid > div { height: 56px; border-radius: 10px; background: #2b2b28; display: grid; place-items: center; font-size: 13px; color: var(--muted); }
+  .demo .rowset > .grid > div.ok { background: #31351f; color: var(--accent); }
+
+  /* Easing demos */
+  .ease-row { display: grid; grid-template-columns: 180px 1fr 120px; gap: 20px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+  .track { position: relative; height: 32px; border-radius: 99px; background: var(--panel); }
+  .dot { position: absolute; left: 4px; top: 4px; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); transition-property: left; }
+  .ease-row:hover .dot, .ease-row.play .dot { left: calc(100% - 28px); }
+  .stage { height: 220px; border-radius: 16px; background: var(--panel); position: relative; overflow: hidden; cursor: pointer; }
+  .stage .page { position: absolute; inset: 16px; border-radius: 10px; display: grid; place-items: center; font-size: 14px; }
+  .stage .a { background: #2b2b28; color: var(--muted); }
+  .stage .b { background: #31351f; color: var(--accent); opacity: 0; }
+  .stage.slide-up.go .a { animation: out-up var(--dur-slow) var(--ease-out) both; }
+  .stage.slide-up.go .b { animation: in-up var(--dur-slow) var(--ease-out) both; }
+  .stage.fade.go .a { animation: out-fade var(--dur-base) var(--ease-out) both; }
+  .stage.fade.go .b { animation: in-fade var(--dur-base) var(--ease-out) both; }
+  .stage.scale-fade.go .a { animation: out-scale var(--dur-base) var(--ease-in) both; }
+  .stage.scale-fade.go .b { animation: in-scale var(--dur-slow) var(--ease-out) both; }
+  @keyframes out-up { to { opacity: 0; transform: translateY(-8%); } }
+  @keyframes in-up { from { opacity: 0; transform: translateY(8%); } to { opacity: 1; } }
+  @keyframes out-fade { to { opacity: 0; } }
+  @keyframes in-fade { to { opacity: 1; } }
+  @keyframes out-scale { to { opacity: 0; transform: scale(.97); } }
+  @keyframes in-scale { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .stage .page, .dot { animation: none !important; transition: none !important; } }
+
+  @media (max-width: 1199.98px) { :root { --cols: 8; --pad: 32px; } .label { grid-column: 1 / -1; } .body { grid-column: 1 / -1; } header h1, header p { grid-column: 1 / -1; } }
+  @media (max-width: 809.98px) { :root { --cols: 4; --gutter: 16px; --pad: 16px; } h2 { font-size: 40px; } .ease-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap grid">
+    <h1>Toolkit</h1>
+    <p>Власний інструментарій Івана для якісних сайтів і застосунків. Модулі: Grid і Motion. Далі: Type, Spacing, Quality, Apps. Правила для агентів лежать у <code>toolkit/*/*.md</code>, ця сторінка призначена для людей.</p>
+  </div>
+</header>
+<nav class="toc"><div class="wrap"><a href="#principles">Принципи</a><a href="#grid">Сітка</a><a href="#types">Типи сіток</a><a href="#motion">Motion</a><a href="#catalog">Референси</a></div></nav>
+
+<section id="principles"><div class="wrap grid">
+  <div class="label">01</div>
+  <div class="body">
+    <h2>Принципи</h2>
+    <table>
+      <tr><th>Одне джерело правди</th><td>Сітка, відступи, типографіка й motion існують як токени (CSS-змінні). Код, dev-інструменти, Figma і цей гайд читають одні й ті самі значення.</td></tr>
+      <tr><th>Пресети замість разових рішень</th><td>Кожен патерн має назву і правило «для чого / не для чого». Новий ефект спершу потрапляє в каталог як референс і лише потім стає пресетом.</td></tr>
+      <tr><th>Перевірки якості</th><td>Оверлей сітки на кожному брейкпоінті, <code>prefers-reduced-motion</code>, контраст, скріншот-тести.</td></tr>
+      <tr><th>Правило двох</th><td>Модуль обкатуємо в портфоліо. Коли він знадобиться другому проєкту, виносимо його в окремий репо.</td></tr>
+    </table>
+  </div>
+</div></section>
+
+<section id="grid"><div class="wrap grid">
+  <div class="label">02 — Grid</div>
+  <div class="body">
+    <h2>12 колонок, спани замість довільних ширин</h2>
+    <p>Число 12 ділиться на 2, 3, 4 і 6. Тому будь-який ряд елементів лягає на ті самі лінії з тим самим гатером. Колонки на фоні цього блоку — справжня сітка сторінки, змініть ширину вікна, щоб побачити 12 / 8 / 4.</p>
+    <table>
+      <tr><th>Брейкпоінт</th><th>Колонки</th><th>Гатер</th><th>Поля</th></tr>
+      <tr><td>≥ 1440</td><td>12</td><td>20</td><td>80 (контейнер до 1600)</td></tr>
+      <tr><td>1200–1439</td><td>12</td><td>20</td><td>32</td></tr>
+      <tr><td>810–1199</td><td>8</td><td>20</td><td>32</td></tr>
+      <tr><td>&lt; 810</td><td>4</td><td>16</td><td>16</td></tr>
+    </table>
+  </div>
+  <div class="wide demo">
+    <div class="cols grid" id="cols"></div>
+    <div class="rowset">
+      <div class="grid"><div class="ok" style="grid-column: span 6">6</div><div class="ok" style="grid-column: span 6">6</div></div>
+      <div class="grid"><div class="ok" style="grid-column: span 4">4</div><div class="ok" style="grid-column: span 4">4</div><div class="ok" style="grid-column: span 4">4</div></div>
+      <div class="grid"><div class="ok" style="grid-column: span 3">3</div><div class="ok" style="grid-column: span 3">3</div><div class="ok" style="grid-column: span 3">3</div><div class="ok" style="grid-column: span 3">3</div></div>
+      <div class="grid"><div style="grid-column: 3 / span 8">текст: колонки 3–10</div></div>
+      <div class="grid"><div class="ok" style="grid-column: span 5">5</div><div class="ok" style="grid-column: span 7">7</div></div>
+    </div>
+  </div>
+  <div class="body">
+    <h3>Так і не так</h3>
+  </div>
+  <div class="wide grid">
+    <div class="do" style="grid-column: span 6"><b>Так.</b> Ряд із 4 карток на спанах по 3. На 1440 кожна займає 305px, а краї збігаються з усім іншим на сторінці.</div>
+    <div class="dont" style="grid-column: span 6"><b>Не так.</b> 4 картки по 301px з проміжком 25 або 3 по 360 у контейнері 1144 по центру. Окремо виглядає рівно, поруч з іншими блоками вже ні.</div>
+  </div>
+  <div class="body">
+    <h3>Вертикальний ритм</h3>
+    <p>Базова одиниця дорівнює міжряддю основного тексту: 16 × 1.5 = 24px. Відступи між секціями й блоками беремо кратними їй або 8. Кеглі підбираємо так, щоб їхнє міжряддя лягало на цей ритм.</p>
+    <h3>Оверлей</h3>
+    <p>У <code>astro dev</code> у правому нижньому куті з'являється кнопка з меню: показ сітки, пресет, шари, підміна колонок / гатера / полів, прозорість. Хоткеї: <code>Ctrl+G</code> показати чи сховати, <code>Ctrl+⇧+G</code> наступний пресет, <code>1–4</code> шари. У URL: <code>?grid=symvol</code>.</p>
+  </div>
+</div></section>
+
+<section id="types"><div class="wrap grid">
+  <div class="label">03 — Типи сіток</div>
+  <div class="body">
+    <h2>Коли брати іншу сітку</h2>
+    <p class="muted">За матеріалами Obys Grids (grids.obys.agency). Ці сітки беремо свідомо, під концепцію конкретної сторінки, а не як основну для всього сайту.</p>
+  </div>
+  <div class="wide grid">
+    <div style="grid-column: span 6">
+      <svg viewBox="0 0 640 360" width="100%" role="img" aria-label="Схема канону Ван де Графа">
+        <rect width="640" height="360" fill="#1a1a1a"/>
+        <g stroke="#6d6dff" stroke-width="1" fill="none">
+          <path d="M0 0L640 360M0 360L640 0M0 0L320 360M0 360L320 0M320 0L640 360M320 360L640 0M0 180L320 0M0 180L320 360M320 0L640 180M320 360L640 180"/>
+          <path d="M106.7 0V360M160 0V360M213.3 0V360M320 0V360M426.7 0V360M480 0V360M533.3 0V360M0 90H640M0 120H640M0 180H640M0 240H640M0 270H640" stroke-opacity=".55"/>
+        </g>
+      </svg>
+    </div>
+    <div style="grid-column: span 6">
+      <h3 style="margin-top:0">Ван де Граф / золотий канон</h3>
+      <p>Будується від пропорцій полотна. Від діагоналей проводимо лінії через точки перетину, доки до країв не залишиться 40–100px. Обираємо лише 6–8 power lines, і саме до них вирівнюємо ключові блоки. На кожному брейкпоінті сітку будуємо заново. У Symvol Lab використано варіант розвороту з двох сторінок.</p>
+      <h3>Модульна (Rectangular)</h3>
+      <p>Модулі, що повторюються, з пропорціями екрана (16:9, 4:3). У прикладах Obys це 25 × 25 ліній. Коли модулів багато, підсвічуємо головні лінії, а частину модулів лишаємо порожніми.</p>
+      <h3>Інші</h3>
+      <p>Асиметричні, радіальні, діагональні, нахилені. Спершу ідея, потім сітка. Нестандартну сітку варто поєднувати зі стандартними елементами, щоб сторінка лишалася зручною.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="motion"><div class="wrap grid">
+  <div class="label">04 — Motion</div>
+  <div class="body">
+    <h2>Токени й пресети</h2>
+    <p>Будь-яка анімація використовує токени тривалості й easing. Анімуємо <code>transform</code> та <code>opacity</code>. Для <code>prefers-reduced-motion</code> рух замінюємо простим fade або прибираємо зовсім. Наведіть курсор на рядок, щоб побачити easing.</p>
+  </div>
+  <div class="wide" id="eases"></div>
+  <div class="body"><h3>Переходи між сторінками</h3><p>Перехід обирається для кожної сторінки атрибутом <code>&lt;html data-transition="…"&gt;</code>. Натисніть на приклад, щоб запустити.</p></div>
+  <div class="wide grid">
+    <div style="grid-column: span 4"><div class="stage fade"><div class="page a">сторінка A</div><div class="page b">сторінка B</div></div><p style="margin-top:12px"><b>fade</b> <span class="muted">за замовчуванням · 320ms · ease-out</span></p></div>
+    <div style="grid-column: span 4"><div class="stage slide-up"><div class="page a">сторінка A</div><div class="page b">сторінка B</div></div><p style="margin-top:12px"><b>slide-up</b> <span class="muted">560ms · кейси, лонгріди</span></p></div>
+    <div style="grid-column: span 4"><div class="stage scale-fade"><div class="page a">сторінка A</div><div class="page b">сторінка B</div></div><p style="margin-top:12px"><b>scale-fade</b> <span class="muted">320 / 560ms · м'яка зміна контексту</span></p></div>
+  </div>
+</div></section>
+
+<section id="catalog"><div class="wrap grid">
+  <div class="label">05 — Референси</div>
+  <div class="body">
+    <h2>Від відео до пресета</h2>
+    <table>
+      <tr><th>1. Зібрати</th><td>URL сайту або відео (експорт з Telegram, запис екрана).</td></tr>
+      <tr><th>2. Виміряти</th><td>Для сайтів беремо справжні значення з CSS / JS. Для відео розкладаємо ролик на кадри й рахуємо тривалість і криву руху.</td></tr>
+      <tr><th>3. Каталогізувати</th><td>Додаємо запис у <code>motion/catalog.json</code>: категорія, тригер, тривалість, easing, feel, де застосовувати.</td></tr>
+      <tr><th>4. Оцінити</th><td>Іван ставить оцінку й уточнює контекст. Пресетами стають лише найкращі.</td></tr>
+      <tr><th>5. Пресет</th><td>Реалізуємо на токенах, додаємо fallback для reduced motion і приклад на цю сторінку.</td></tr>
+    </table>
+    <h3>Категорії</h3>
+    <p>
+      <span class="tag">page-transition</span> <span class="tag">shared-element</span> <span class="tag">scroll-reveal</span> <span class="tag">scroll-linked</span> <span class="tag">text</span> <span class="tag">carousel</span> <span class="tag">hover</span> <span class="tag">cursor</span> <span class="tag">menu</span> <span class="tag">loader</span> <span class="tag">micro</span> <span class="tag">media</span>
+    </p>
+    <p class="muted">Пресет застосовується тільки в контексті своєї категорії. Easing каруселі не переносимо на перехід між сторінками.</p>
+  </div>
+</div></section>
+
+<script>
+  // background columns follow the live CSS column count
+  const cols = document.getElementById('cols');
+  const draw = () => {
+    const n = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--cols'), 10) || 12;
+    cols.innerHTML = '<span></span>'.repeat(n);
+  };
+  draw(); addEventListener('resize', draw);
+
+  const eases = [
+    ['--ease-out', 'за замовчуванням: швидкий старт, м\'яке завершення', 'var(--dur-slow)'],
+    ['--ease-in-out', 'переміщення з A в B на екрані', 'var(--dur-slow)'],
+    ['--ease-in', 'елементи, що зникають', 'var(--dur-base)'],
+    ['linear', 'прив\'язка до скролу, marquee', 'var(--dur-slower)'],
+  ];
+  document.getElementById('eases').innerHTML = eases.map(([t, d, dur]) => `
+    <div class="ease-row" tabindex="0">
+      <div><code>${t}</code><div class="muted" style="font-size:13px;margin-top:4px">${d}</div></div>
+      <div class="track"><div class="dot" style="transition-duration:${dur};transition-timing-function:${t.startsWith('--') ? `var(${t})` : t}"></div></div>
+      <div class="muted" style="font-size:13px">${dur.replace(/var\(--(.*)\)/, '$1')}</div>
+    </div>`).join('');
+  document.querySelectorAll('.ease-row').forEach((r) => r.addEventListener('click', () => r.classList.toggle('play')));
+  document.querySelectorAll('.stage').forEach((s) => s.addEventListener('click', () => {
+    s.classList.remove('go'); void s.offsetWidth; s.classList.add('go');
+  }));
+</script>
+</body>
+</html>

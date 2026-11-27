@@ -1,0 +1,40 @@
+/* Page-transition presets (cross-document View Transitions).
+   Pick one per page: <html data-transition="slide-up">. Default: fade.
+   Needs `@view-transition { navigation: auto; }` (already in src/index.css)
+   and tokens from ../tokens.css. */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* fade — default crossfade */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: var(--dur-base);
+    animation-timing-function: var(--ease-out);
+  }
+
+  /* slide-up — old page lifts and fades, new page rises from below */
+  :root[data-transition='slide-up']::view-transition-old(root) {
+    animation: tk-slide-up-out var(--dur-slow) var(--ease-out) both;
+  }
+  :root[data-transition='slide-up']::view-transition-new(root) {
+    animation: tk-slide-up-in var(--dur-slow) var(--ease-out) both;
+  }
+
+  /* scale-fade — old page recedes slightly, new page settles in */
+  :root[data-transition='scale-fade']::view-transition-old(root) {
+    animation: tk-scale-out var(--dur-base) var(--ease-in) both;
+  }
+  :root[data-transition='scale-fade']::view-transition-new(root) {
+    animation: tk-scale-in var(--dur-slow) var(--ease-out) both;
+  }
+}
+
+/* none — instant swap (also what reduced-motion users get) */
+:root[data-transition='none']::view-transition-old(root),
+:root[data-transition='none']::view-transition-new(root) {
+  animation: none;
+}
+
+@keyframes tk-slide-up-out { to { opacity: 0; transform: translateY(calc(var(--move-lg) * -1)); } }
+@keyframes tk-slide-up-in { from { opacity: 0; transform: translateY(var(--move-lg)); } }
+@keyframes tk-scale-out { to { opacity: 0; transform: scale(0.97); } }
+@keyframes tk-scale-in { from { opacity: 0; transform: scale(1.02); } }
